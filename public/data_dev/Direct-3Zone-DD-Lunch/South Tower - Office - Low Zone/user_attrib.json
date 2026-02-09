@@ -1,0 +1,18 @@
+{
+  "CustomName": "Low Zone",
+  "Project": "P3449 GBC Hyundai",
+  "Building": "Gateway Tower",
+  "Asset": "Office",
+  "OptionName": "Direct-3Zone-DD-Lunch",
+  "CustomDescription": null,
+  "ContactPerson": [
+    "Kyle Chen"
+  ],
+  "Date": "2025-10-22",
+  "Tags": [
+    "DD",
+    "3 Zone",
+    "Lunch",
+    "Direct"
+  ]
+}

@@ -1,0 +1,79 @@
+.page2-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Three.js viewport sits behind everything */
+.three-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Base floating container styles */
+.floating-container {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+/* Container 1: Top header with buttons */
+.header-container {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 400px;
+  text-align: center;
+}
+
+.header-container h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.button-group button {
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.button-group button:hover {
+  background-color: #2980b9;
+}
+
+/* Container 2: Left sidebar panel */
+.left-panel {
+  top: 120px;
+  left: 20px;
+  width: 250px;
+  height: calc(100vh - 360px);
+  background-color: rgba(236, 240, 241, 0.95);
+}
+
+/* Container 3: Bottom chart container */
+.chart-container {
+  bottom: 20px;
+  left: calc(250px + 40px); /* Left panel width + sidebar width + offsets */
+  right: 20px;
+  height: 200px;
+}

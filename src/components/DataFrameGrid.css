@@ -1,0 +1,10 @@
+.datagrid-container {
+  height: 500px;
+  width: 100%;
+}
+
+.datagrid-container h3 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 18px;
+}

@@ -1,0 +1,117 @@
+{
+  "FileName": "South Tower - Office - Low Zone",
+  "NoOfFloors": 18,
+  "UseFloorLevel": 1,
+  "LowestFloorFirst": false,
+  "NoShafts": 0,
+  "NoConnections": 0,
+  "AbsenteeismPercent": 20.0,
+  "BuildingType": 1,
+  "Express": 0,
+  "ExpressStartPosition": 0.0,
+  "ExpressEndPosition": 0.0,
+  "Floors": [
+    "B2 LL",
+    "B2 UL",
+    "Level 9",
+    "Level 9 Mezz",
+    "Level 11",
+    "Level 12",
+    "Level 13",
+    "Level 14",
+    "Level 15",
+    "Level 16",
+    "Level 17",
+    "Level 18",
+    "Level 19",
+    "Level 20",
+    "Level 21",
+    "Level 22",
+    "Level 23",
+    "Level 24"
+  ],
+  "HighestFloor": "Level 24",
+  "FloorRange": "18 flrs (~Level 24)",
+  "TravelDistance": 122.9,
+  "Population": 2961,
+  "NoOfElevatorsMode": "Select",
+  "NoOfLifts": [
+    7,
+    8
+  ],
+  "MinNoOfLifts": 7,
+  "MaxNoOfLifts": 8,
+  "CarType": "Double Deck",
+  "CapacityMode": 2,
+  "Capacity": 1800.0,
+  "MinCapacity": 630.0,
+  "MaxCapacity": 1600.0,
+  "CarAreaMode": "Auto",
+  "CarAreaM2": 2.4,
+  "DoorMode": "Auto",
+  "Pre-Open": 0.5,
+  "Open": 1.8,
+  "Close": 2.9,
+  "DoorDwell1": 3.0,
+  "DoorDwell2": 2.0,
+  "SpeedMode": "Specified",
+  "Speed": 4.0,
+  "MinSpeed": 1.0,
+  "MaxSpeed": 2.5,
+  "AccelerationMode": "Specified",
+  "Acceleration": 1.1,
+  "JerkMode": "Specified",
+  "Jerk": 1.2,
+  "StartDelay": 0.5,
+  "LevelingDelay": 0.0,
+  "HomeFloor": 1,
+  "ResultFilter": "Off",
+  "MaxAWTFilter": 18,
+  "MaxAJTFilter": 90,
+  "MaxInterval": 30,
+  "MaxCapacityFactor": 80,
+  "Min5MinHandlingCapacity": 12,
+  "DriveModel": "Hydraulic",
+  "NoOfConfigurations": 2,
+  "Runs": 10,
+  "Id": [
+    "847",
+    "968"
+  ],
+  "AWT": [
+    "41.225921",
+    "35.488749"
+  ],
+  "LWT": [
+    "208.907803",
+    "177.465606"
+  ],
+  "ATT": [
+    "52.795472",
+    "49.238340"
+  ],
+  "LTT": [
+    "171.670000",
+    "147.890000"
+  ],
+  "AJT": [
+    "94.021394",
+    "84.727089"
+  ],
+  "LJT": [
+    "262.606168",
+    "231.945050"
+  ],
+  "IsAnalysed": [
+    "1",
+    "1"
+  ],
+  "MeetResultsOptionsCriteria": [
+    "1",
+    "1"
+  ],
+  "ATD": [
+    94.02139299999999,
+    84.727089
+  ]
+}

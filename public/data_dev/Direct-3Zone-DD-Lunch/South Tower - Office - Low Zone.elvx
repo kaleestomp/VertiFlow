@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ElevateDocument>
+	<DocumentData DataVersion="1.000000" ElevateVersion="Elevate 7.0" DesignFileName="O:\Users\chuan\Vertical Transportation\3449 - Global Business Complex(Hyundai) - South Korea\Calculations\Towers\251006 - South Tower - Based on 251002 Population\Office\Direct - 3 Zone - DD - Lunch\South Tower - Office - Low Zone.elvx" Saved="Thursday, October 09, 14:02:S 2025"/>
+	<JobData JobTitle="" JobNo="" CalculationTitle="" MadeBy="" CheckedBy="" LogoFile="" Company=""/>
+	<AnalysisData>
+		<Analysis AnalysisType="Simulation" MeasurementSystem="Metric"/>
+		<Dispatcher>
+			<Algorithm AlgorithmSource="Standard" AlgorithmName="Double Deck Destination Control" Mode="Normal"/>
+			<AdvancedSettings>
+				<DoubleDeckDestinationControl CostFunction="Minimum time to destination" AllowAllocationsDoorsReOpen="True"/>
+			</AdvancedSettings>
+		</Dispatcher>
+		<Interfaces Mode="Xml Mode Off"/>
+		<SimulationParameters TimeSliceBetweenSimulationCalculations="0.100000" NoOfTimeSlicesBetweenScreenUpdates="10" NoOfSimulationsToRunForEachConfiguration="10" NoOfLearningRuns="0" RandomNumberSeedForPassengerGenerator="1" MinimumDwellCarCall="2000" MinimumDwellLandingCall="2000" MinimumPhotocellDelay="2000" PassengerLoadingTime="1200" PassengerUnloadingTime="1200" PassengerWalkingSpeed="1400" LoggingEnabled="0" LoggingFromTime="0.000000" LoggingLiftMode="1" LoggingyLiftIndex="1" LoggingPassengerMode="1" LoggingPersonIndex="1" LoggingCallMode="1" LoggingCallIndex="1"/>
+		<RoundTripTime Losses="5.000000"/>
+		<Energy EnergyModel="Off" CurrencySymbol="$" EnergykWhrCost="0.060000"/>
+		<OtherData DispatcherDebug="False" SimulationFontSize="12" SimulationComplete="True" LinesPerPage="95"/>
+	</AnalysisData>
+	<BuildingData NoOfFloors="18" UseFloorLevel="1" LowestFloorFirst="False" NoShafts="0" NoConnections="0" AbsenteeismPercent="20.000000" BuildingType="1" Express="0" ExpressStartPosition="0.000000" ExpressEndPosition="0.000000">
+		<Floor FloorName="B2 LL" FloorLevel="-15.000000" NoOfPeople="0" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="True" UserInterface="0"/>
+		<Floor FloorName="B2 UL" FloorLevel="-10.700000" NoOfPeople="0" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="True" UserInterface="0"/>
+		<Floor FloorName="Level 9" FloorLevel="39.100000" NoOfPeople="0" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="True" UserInterface="0"/>
+		<Floor FloorName="Level 9 Mezz" FloorLevel="43.400000" NoOfPeople="0" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="True" UserInterface="0"/>
+		<Floor FloorName="Level 11" FloorLevel="52.000000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 12" FloorLevel="56.300000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 13" FloorLevel="60.600000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 14" FloorLevel="64.900000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 15" FloorLevel="69.200000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 16" FloorLevel="73.500000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 17" FloorLevel="77.800000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 18" FloorLevel="82.100000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 19" FloorLevel="86.400000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 20" FloorLevel="90.700000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 21" FloorLevel="95.000000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 22" FloorLevel="99.300000" NoOfPeople="227" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 23" FloorLevel="103.600000" NoOfPeople="0" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<Floor FloorName="Level 24" FloorLevel="107.900000" NoOfPeople="237" Area="0.000000" AreaPerPerson="-1.000000" EntranceFloor="False" UserInterface="0"/>
+		<SpeedFill MaxSpeedFillIndex="10" AntiBunching="False">
+			<SpeedFillSeries SpeedFillIndex="0">
+				<Series Id="0" Data="Level -5"/>
+				<Series Id="1" Data="Level -4"/>
+				<Series Id="2" Data="Level -3"/>
+				<Series Id="3" Data="Level -2"/>
+				<Series Id="4" Data="Level -1"/>
+				<Series Id="5" Data="Level 1"/>
+				<Series Id="6" Data="Level 2"/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="1">
+				<Series Id="0" Data="Level -4"/>
+				<Series Id="1" Data="Level -3"/>
+				<Series Id="2" Data="Level -2"/>
+				<Series Id="3" Data="Level -1"/>
+				<Series Id="4" Data="Level 1"/>
+				<Series Id="5" Data="Level 2"/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="2">
+				<Series Id="0" Data="Level -3"/>
+				<Series Id="1" Data="Level -2"/>
+				<Series Id="2" Data="Level -1"/>
+				<Series Id="3" Data="Level 1"/>
+				<Series Id="4" Data="Level 2"/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="3">
+				<Series Id="0" Data="Level -2"/>
+				<Series Id="1" Data="Level -1"/>
+				<Series Id="2" Data="Level 1"/>
+				<Series Id="3" Data="Level 2"/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="4">
+				<Series Id="0" Data="Level -1"/>
+				<Series Id="1" Data="Level 1"/>
+				<Series Id="2" Data="Level 2"/>
+				<Series Id="3" Data=""/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="5">
+				<Series Id="0" Data="Level 1"/>
+				<Series Id="1" Data="Level 2"/>
+				<Series Id="2" Data=""/>
+				<Series Id="3" Data=""/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="6">
+				<Series Id="0" Data="Level 0"/>
+				<Series Id="1" Data="Level 1"/>
+				<Series Id="2" Data="Level 2"/>
+				<Series Id="3" Data=""/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="7">
+				<Series Id="0" Data="Ground"/>
+				<Series Id="1" Data="Level 2"/>
+				<Series Id="2" Data=""/>
+				<Series Id="3" Data=""/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="8">
+				<Series Id="0" Data="Basement"/>
+				<Series Id="1" Data="Ground"/>
+				<Series Id="2" Data="Level 2"/>
+				<Series Id="3" Data=""/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+			<SpeedFillSeries SpeedFillIndex="9">
+				<Series Id="0" Data="Car Park"/>
+				<Series Id="1" Data="Ground"/>
+				<Series Id="2" Data="Level 2"/>
+				<Series Id="3" Data=""/>
+				<Series Id="4" Data=""/>
+				<Series Id="5" Data=""/>
+				<Series Id="6" Data=""/>
+				<Series Id="7" Data=""/>
+				<Series Id="8" Data=""/>
+				<Series Id="9" Data=""/>
+			</SpeedFillSeries>
+		</SpeedFill>
+	</BuildingData>
+	<ElevatorData ElevatorDataMode="Standard">
+		<StandardValues>
+			<MetricCapacityKg>
+				<Value>450.000000</Value>
+				<Value>630.000000</Value>
+				<Value>800.000000</Value>
+				<Value>1000.000000</Value>
+				<Value>1275.000000</Value>
+				<Value>1350.000000</Value>
+				<Value>1600.000000</Value>
+				<Value>1800.000000</Value>
+				<Value>2000.000000</Value>
+				<Value>2500.000000</Value>
+			</MetricCapacityKg>
+			<ImperialCapacityLb>
+				<Value>1500.000000</Value>
+				<Value>2000.000000</Value>
+				<Value>2500.000000</Value>
+				<Value>3000.000000</Value>
+				<Value>3500.000000</Value>
+				<Value>4000.000000</Value>
+				<Value>4500.000000</Value>
+				<Value>5000.000000</Value>
+				<Value>5500.000000</Value>
+				<Value>6000.000000</Value>
+			</ImperialCapacityLb>
+			<MetricAreaM2>
+				<Value>1.300000</Value>
+				<Value>1.660000</Value>
+				<Value>2.000000</Value>
+				<Value>2.400000</Value>
+				<Value>2.950000</Value>
+				<Value>3.100000</Value>
+				<Value>3.560000</Value>
+				<Value>3.880000</Value>
+				<Value>4.200000</Value>
+				<Value>5.000000</Value>
+			</MetricAreaM2>
+			<ImperialAreaFt2>
+				<Value>19.000000</Value>
+				<Value>23.890000</Value>
+				<Value>28.330000</Value>
+				<Value>31.660000</Value>
+				<Value>36.110000</Value>
+				<Value>41.530000</Value>
+				<Value>45.360000</Value>
+				<Value>49.960000</Value>
+				<Value>53.740000</Value>
+				<Value>58.590000</Value>
+			</ImperialAreaFt2>
+			<StandardMetricSpeedMs>
+				<Value>0.300000</Value>
+				<Value>0.630000</Value>
+				<Value>1.000000</Value>
+				<Value>1.600000</Value>
+				<Value>2.500000</Value>
+				<Value>3.150000</Value>
+				<Value>5.000000</Value>
+				<Value>6.000000</Value>
+				<Value>7.000000</Value>
+				<Value>8.000000</Value>
+			</StandardMetricSpeedMs>
+			<StandardImperialSpeedFtMin>
+				<Value>150.000000</Value>
+				<Value>200.000000</Value>
+				<Value>300.000000</Value>
+				<Value>400.000000</Value>
+				<Value>500.000000</Value>
+				<Value>700.000000</Value>
+				<Value>1000.000000</Value>
+				<Value>1200.000000</Value>
+				<Value>1400.000000</Value>
+				<Value>1600.000000</Value>
+			</StandardImperialSpeedFtMin>
+		</StandardValues>
+		<Standard NoOfElevatorsMode="Select" NoOfLifts="8" MinNoOfLifts="7" MaxNoOfLifts="8" CarType="Double Deck" CapacityMode="2" Capacity="1800.000000" MinCapacity="630.000000" MaxCapacity="1600.000000" CarAreaMode="Auto" CarAreaM2="2.400000" DoorMode="Auto" Pre-Open="0.500000" Open="1.800000" Close="2.900000" DoorDwell1="3.000000" DoorDwell2="2.000000" SpeedMode="Specified" Speed="4.000000" MinSpeed="1.000000" MaxSpeed="2.500000" AccelerationMode="Specified" Acceleration="1.100000" JerkMode="Specified" Jerk="1.200000" StartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" ResultFilter="Off" MaxAWTFilter="18" MaxAJTFilter="90" MaxInterval="30" MaxCapacityFactor="80" Min5MinHandlingCapacity="12" DriveModel="Hydraulic"/>
+		<Advanced>
+			<Configuration NoOfLifts="7">
+				<Car Id="1" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="1" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="630.000000" StandardImperialCapacity="2000.000000" StandardMetricSpeed="0.630000" StandardImperialSpeed="200.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+				<Car Id="2" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="2" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="800.000000" StandardImperialCapacity="2500.000000" StandardMetricSpeed="1.000000" StandardImperialSpeed="300.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+				<Car Id="3" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="3" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="1000.000000" StandardImperialCapacity="3000.000000" StandardMetricSpeed="1.600000" StandardImperialSpeed="400.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+				<Car Id="4" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="4" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="1275.000000" StandardImperialCapacity="3500.000000" StandardMetricSpeed="2.500000" StandardImperialSpeed="500.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+				<Car Id="5" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="5" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="1350.000000" StandardImperialCapacity="4000.000000" StandardMetricSpeed="3.150000" StandardImperialSpeed="700.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+				<Car Id="6" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="6" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="1600.000000" StandardImperialCapacity="4500.000000" StandardMetricSpeed="5.000000" StandardImperialSpeed="1000.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+				<Car Id="7" CarType="Double Deck" Capacity="1800.000000" FloorAreaM2="3.880000" DoorPreOpening="0.000000" DoorOpenTime="1.800000" DoorCloseTime="2.900000" HomeDoorDwell1="3.000000" HomeDoorDwell2="2.000000" DoorDwell1="3.000000" DoorDwell2="2.000000" MaxDoorReOpenings="-1" Speed="4.000000" Acceleration="1.100000" Jerk="1.200000" MotorStartDelay="0.500000" LevelingDelay="0.000000" HomeFloor="1" MGShutDownAfterTime="0.000000" MGRestartTime="0.000000" HomeShaft="7" VelocityXAxis="1.000000" AccelerationXAxis="0.500000" JerkXAxis="0.400000" LoadConnectionDelayXAxis="4.000000" UnLoadConnectionDelayXAxis="5.000000" StandardMetricCapacity="1800.000000" StandardImperialCapacity="5000.000000" StandardMetricSpeed="6.000000" StandardImperialSpeed="1200.000000" m_StandardNoLifts="1">
+					<FloorServed FloorName="B2 LL" FloorIndex="1" Doors="Front Doors"/>
+					<FloorServed FloorName="B2 UL" FloorIndex="2" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9" FloorIndex="3" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 9 Mezz" FloorIndex="4" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 11" FloorIndex="5" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 12" FloorIndex="6" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 13" FloorIndex="7" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 14" FloorIndex="8" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 15" FloorIndex="9" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 16" FloorIndex="10" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 17" FloorIndex="11" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 18" FloorIndex="12" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 19" FloorIndex="13" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 20" FloorIndex="14" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 21" FloorIndex="15" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 22" FloorIndex="16" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 23" FloorIndex="17" Doors="Front Doors"/>
+					<FloorServed FloorName="Level 24" FloorIndex="18" Doors="Front Doors"/>
+					<DriveEnergy KwDriveOff="0.000000"/>
+					<DriveEnergy KwDriveOn="0.000000"/>
+					<DriveEnergy Kw0PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw25PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw50PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw75PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw100PercentLoadUp="0.000000"/>
+					<DriveEnergy Kw0PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw25PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw50PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw75PercentLoadDown="0.000000"/>
+					<DriveEnergy Kw100PercentLoadDown="0.000000"/>
+				</Car>
+			</Configuration>
+		</Advanced>
+		<XDispatch>
+			<Floor FloorName="B2 LL" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="B2 UL" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 9" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 9 Mezz" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 11" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 12" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 13" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 14" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 15" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 16" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 17" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 18" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 19" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 20" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 21" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 22" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 23" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+			<Floor FloorName="Level 24" DestinationButtons="False" UpCallsServedUpPeak="True" DownCallsServedUpPeak="True"/>
+		</XDispatch>
+	</ElevatorData>
+	<PassengerData PassengerDataMode="Standard">
+		<Standard StartTimeHours="8" StartTimeMins="0" EndTimeHours="9" EndTimeMins="15" LoadingTime="1.000000" UnloadingTime="1.000000" PassengerMass="75.000000" CapacityFactorByMass="80" PassengerAreaM2="0.210000" CapacityFactorByAreaPerCent="100" StairFactor="0.000000">
+			<Arrangement>Double Deck with no odd to even floor traffic</Arrangement>
+			<Template>Constant traffic (% building pop per 5 mins)</Template>
+			<FirstFloorServedUpperZone>B2 LL</FirstFloorServedUpperZone>
+			<HandlingCapacity>12.000000</HandlingCapacity>
+			<Incoming>45.000000</Incoming>
+			<Outgoing>45.000000</Outgoing>
+			<Interfloor>10.000000</Interfloor>
+			<MinHC>1.000000</MinHC>
+			<MaxHC>15.000000</MaxHC>
+			<StepDuration>5.000000</StepDuration>
+			<StepHeight>1.000000</StepHeight>
+			<Floor EntranceBias="90.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="10.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+			<Floor EntranceBias="0.000000"/>
+		</Standard>
+		<Advanced NoTrafficPeriods="1">
+			<Period Number="1" StartTime="08:00" EndTime="09:15" PassengerMass="75.000000" CapacityFactorByMass="80" PassengerAreaM2="0.210000" CapacityFactorByAreaPerCent="100" LoadingTime="1.000000" UnloadingTime="1.000000" StairFactor="0.000000" PeriodNotes="Passengers">
+				<PassengerDemand>
+					<From FloorName="B2 LL" ArrivalRate="52.954560">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="16.666667"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="16.666667"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="16.666667"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="16.666667"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="16.666667"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="16.666667"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="B2 UL" ArrivalRate="62.169120">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="14.196373"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="14.196373"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="14.196373"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="14.196373"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="14.196373"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="14.196373"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="14.821764"/>
+					</From>
+					<From FloorName="Level 9" ArrivalRate="5.883840">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="16.666667"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="16.666667"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="16.666667"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="16.666667"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="16.666667"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="16.666667"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 9 Mezz" ArrivalRate="6.907680">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="14.196373"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="14.196373"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="14.196373"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="14.196373"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="14.196373"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="14.196373"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="14.821764"/>
+					</From>
+					<From FloorName="Level 11" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="73.636364"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="8.181818"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="3.636364"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="3.636364"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="3.636364"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="3.636364"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="3.636364"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 12" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="3.008216"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="3.008216"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="3.008216"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="3.008216"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="3.008216"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="3.140737"/>
+					</From>
+					<From FloorName="Level 13" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="73.636364"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="8.181818"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="3.636364"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="3.636364"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="3.636364"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="3.636364"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="3.636364"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 14" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="3.008216"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="3.008216"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="3.008216"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="3.008216"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="3.008216"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="3.140737"/>
+					</From>
+					<From FloorName="Level 15" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="73.636364"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="8.181818"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="3.636364"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="3.636364"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="3.636364"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="3.636364"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="3.636364"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 16" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="3.008216"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="3.008216"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="3.008216"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="3.008216"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="3.008216"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="3.140737"/>
+					</From>
+					<From FloorName="Level 17" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="73.636364"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="8.181818"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="3.636364"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="3.636364"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="3.636364"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="3.636364"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="3.636364"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 18" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="3.008216"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="3.008216"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="3.008216"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="3.008216"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="3.008216"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="3.140737"/>
+					</From>
+					<From FloorName="Level 19" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="73.636364"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="8.181818"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="3.636364"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="3.636364"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="3.636364"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="3.636364"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="3.636364"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 20" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="3.008216"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="3.008216"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="3.008216"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="3.008216"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="3.008216"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="3.140737"/>
+					</From>
+					<From FloorName="Level 21" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="73.636364"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="8.181818"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="3.636364"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="3.636364"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="3.636364"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="3.636364"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="3.636364"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 22" ArrivalRate="11.985600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="3.008216"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="3.008216"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="3.008216"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="3.008216"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="3.008216"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="3.140737"/>
+					</From>
+					<From FloorName="Level 23" ArrivalRate="0.000000">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="0.000000"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="0.000000"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="0.000000"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="0.000000"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="0.000000"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="0.000000"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="0.000000"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+					<From FloorName="Level 24" ArrivalRate="12.513600">
+						<To FloorName="B2 LL" DestinationProbability="0.000000"/>
+						<To FloorName="B2 UL" DestinationProbability="73.636364"/>
+						<To FloorName="Level 9" DestinationProbability="0.000000"/>
+						<To FloorName="Level 9 Mezz" DestinationProbability="8.181818"/>
+						<To FloorName="Level 11" DestinationProbability="0.000000"/>
+						<To FloorName="Level 12" DestinationProbability="3.030303"/>
+						<To FloorName="Level 13" DestinationProbability="0.000000"/>
+						<To FloorName="Level 14" DestinationProbability="3.030303"/>
+						<To FloorName="Level 15" DestinationProbability="0.000000"/>
+						<To FloorName="Level 16" DestinationProbability="3.030303"/>
+						<To FloorName="Level 17" DestinationProbability="0.000000"/>
+						<To FloorName="Level 18" DestinationProbability="3.030303"/>
+						<To FloorName="Level 19" DestinationProbability="0.000000"/>
+						<To FloorName="Level 20" DestinationProbability="3.030303"/>
+						<To FloorName="Level 21" DestinationProbability="0.000000"/>
+						<To FloorName="Level 22" DestinationProbability="3.030303"/>
+						<To FloorName="Level 23" DestinationProbability="0.000000"/>
+						<To FloorName="Level 24" DestinationProbability="0.000000"/>
+					</From>
+				</PassengerDemand>
+			</Period>
+		</Advanced>
+		<PassengerDataFile>no file selected</PassengerDataFile>
+		<Calculator BuildingType="0" QualityService="1" NoFloors="1" Units="1" Population="1" DriveType="0" LobbyFloorHeight="0.000000" FloorHeight="0.000000"/>
+		<Traffic>
+			<Period Id="0" TotalArrivalRate="12.000000" SplitUp="45.000000" SplitDown="45.000000" SplitInterfloor="10.000000"/>
+			<Period Id="1" TotalArrivalRate="1.000000" SplitUp="100.000000" SplitDown="0.000000" SplitInterfloor="0.000000"/>
+		</Traffic>
+	</PassengerData>
+	<Results HandlingCapacityOption="0" IntervalOption="0" CapacityFactorByMassOption="filter off" CapacityFactorByAreaOption="filter off" SimulationTimeOption="0" WaitingTimeOption="0" TransitTimeOption="0" TimeToDestinationOption="0" MaxATT="90.000000" MaxAWT="20.000000" MaxCapacityByMassPercent="80.000000" MaxCapacityByAreaPercent="100.000000" MaxINT="30.000000" MaxTTD="110.000000" MinHC="12.000000" SelectedRunNo="0" StartTime="0.000000" EndTime="86340.000000">
+		<Graphs Colour="True">
+			<Graph Id="8" AutoScale="1" ScaleMaximum="0.000000">
+				<Floor Id="0" PlotGraph="1"/>
+			</Graph>
+			<Graph Id="9" AutoScale="1" ScaleMaximum="0.000000">
+				<Floor Id="0" PlotGraph="1"/>
+			</Graph>
+			<Graph Id="10" AutoScale="1" ScaleMaximum="0.000000">
+				<Floor Id="0" PlotGraph="1"/>
+			</Graph>
+			<Graph Id="11" AutoScale="1" ScaleMaximum="0.000000">
+				<Floor Id="0" PlotGraph="1"/>
+			</Graph>
+			<Graph Id="12" AutoScale="1" ScaleMaximum="0.000000">
+				<Floor Id="0" PlotGraph="1"/>
+			</Graph>
+		</Graphs>
+		<Configs CurrentConfiguration="-1">
+			<Config Id="847" AWT="41.225921" LWT="208.907803" ATT="52.795472" LTT="171.670000" AJT="94.021394" LJT="262.606168" IsAnalysed="1" MeetResultsOptionsCriteria="1"/>
+			<Config Id="968" AWT="35.488749" LWT="177.465606" ATT="49.238340" LTT="147.890000" AJT="84.727089" LJT="231.945050" IsAnalysed="1" MeetResultsOptionsCriteria="1"/>
+		</Configs>
+		<ResultsFile ResultsFileName="O:\Users\chuan\Vertical Transportation\3449 - Global Business Complex(Hyundai) - South Korea\Calculations\Towers\251006 - South Tower - Based on 251002 Population\Office\Direct - 3 Zone - DD - Lunch\South Tower - Office - Low Zone.elvr">
+			<Pointer Ctr="1" Config="847" Run="1" PointerId="22"/>
+			<Pointer Ctr="2" Config="847" Run="2" PointerId="898466"/>
+			<Pointer Ctr="3" Config="847" Run="1" PointerId="22"/>
+			<Pointer Ctr="4" Config="847" Run="2" PointerId="890230"/>
+			<Pointer Ctr="5" Config="847" Run="3" PointerId="1780200"/>
+			<Pointer Ctr="6" Config="847" Run="4" PointerId="2670179"/>
+			<Pointer Ctr="7" Config="847" Run="5" PointerId="3560220"/>
+			<Pointer Ctr="8" Config="847" Run="6" PointerId="4449249"/>
+			<Pointer Ctr="9" Config="847" Run="7" PointerId="5341324"/>
+			<Pointer Ctr="10" Config="847" Run="8" PointerId="6231787"/>
+			<Pointer Ctr="11" Config="847" Run="9" PointerId="7121743"/>
+			<Pointer Ctr="12" Config="847" Run="10" PointerId="8011171"/>
+			<Pointer Ctr="13" Config="968" Run="1" PointerId="8901505"/>
+			<Pointer Ctr="14" Config="968" Run="2" PointerId="9805492"/>
+			<Pointer Ctr="15" Config="968" Run="3" PointerId="10709407"/>
+			<Pointer Ctr="16" Config="968" Run="4" PointerId="11612664"/>
+			<Pointer Ctr="17" Config="968" Run="5" PointerId="12514989"/>
+			<Pointer Ctr="18" Config="968" Run="6" PointerId="13417721"/>
+			<Pointer Ctr="19" Config="968" Run="7" PointerId="14322236"/>
+			<Pointer Ctr="20" Config="968" Run="8" PointerId="15224125"/>
+			<Pointer Ctr="21" Config="968" Run="9" PointerId="16127295"/>
+			<Pointer Ctr="22" Config="968" Run="10" PointerId="17029442"/>
+			<Pointer Ctr="23" Config="847" Run="1" PointerId="22"/>
+			<Pointer Ctr="24" Config="847" Run="2" PointerId="897007"/>
+			<Pointer Ctr="25" Config="847" Run="3" PointerId="1794697"/>
+			<Pointer Ctr="26" Config="847" Run="4" PointerId="2690892"/>
+			<Pointer Ctr="27" Config="847" Run="1" PointerId="22"/>
+			<Pointer Ctr="28" Config="847" Run="2" PointerId="897007"/>
+			<Pointer Ctr="29" Config="847" Run="3" PointerId="1794697"/>
+			<Pointer Ctr="30" Config="847" Run="4" PointerId="2690892"/>
+			<Pointer Ctr="31" Config="847" Run="5" PointerId="3587688"/>
+			<Pointer Ctr="32" Config="847" Run="6" PointerId="4482870"/>
+			<Pointer Ctr="33" Config="847" Run="7" PointerId="5381640"/>
+			<Pointer Ctr="34" Config="847" Run="8" PointerId="6277663"/>
+			<Pointer Ctr="35" Config="847" Run="9" PointerId="7174527"/>
+			<Pointer Ctr="36" Config="847" Run="10" PointerId="8071416"/>
+			<Pointer Ctr="37" Config="968" Run="1" PointerId="8966694"/>
+			<Pointer Ctr="38" Config="968" Run="2" PointerId="9876303"/>
+			<Pointer Ctr="39" Config="968" Run="3" PointerId="10785349"/>
+			<Pointer Ctr="40" Config="968" Run="4" PointerId="11693859"/>
+			<Pointer Ctr="41" Config="968" Run="5" PointerId="12601112"/>
+			<Pointer Ctr="42" Config="968" Run="6" PointerId="13509995"/>
+			<Pointer Ctr="43" Config="968" Run="7" PointerId="14421363"/>
+			<Pointer Ctr="44" Config="968" Run="8" PointerId="15329980"/>
+			<Pointer Ctr="45" Config="968" Run="9" PointerId="16237353"/>
+			<Pointer Ctr="46" Config="968" Run="10" PointerId="17147934"/>
+			<Pointer Ctr="47" Config="847" Run="1" PointerId="22"/>
+			<Pointer Ctr="48" Config="847" Run="2" PointerId="861622"/>
+			<Pointer Ctr="49" Config="847" Run="3" PointerId="1721939"/>
+			<Pointer Ctr="50" Config="847" Run="4" PointerId="2583273"/>
+			<Pointer Ctr="51" Config="847" Run="5" PointerId="3444006"/>
+			<Pointer Ctr="52" Config="847" Run="6" PointerId="4303644"/>
+			<Pointer Ctr="53" Config="847" Run="7" PointerId="5164924"/>
+			<Pointer Ctr="54" Config="847" Run="8" PointerId="6026043"/>
+			<Pointer Ctr="55" Config="847" Run="9" PointerId="6886259"/>
+			<Pointer Ctr="56" Config="847" Run="10" PointerId="7747680"/>
+			<Pointer Ctr="57" Config="968" Run="1" PointerId="8610187"/>
+			<Pointer Ctr="58" Config="968" Run="2" PointerId="9487640"/>
+			<Pointer Ctr="59" Config="968" Run="3" PointerId="10363502"/>
+			<Pointer Ctr="60" Config="968" Run="4" PointerId="11239062"/>
+			<Pointer Ctr="61" Config="968" Run="5" PointerId="12114145"/>
+			<Pointer Ctr="62" Config="968" Run="6" PointerId="12989990"/>
+			<Pointer Ctr="63" Config="968" Run="7" PointerId="13865712"/>
+			<Pointer Ctr="64" Config="968" Run="8" PointerId="14742944"/>
+			<Pointer Ctr="65" Config="968" Run="9" PointerId="15619367"/>
+			<Pointer Ctr="66" Config="968" Run="10" PointerId="16495607"/>
+		</ResultsFile>
+	</Results>
+	<LogoFileName/>
+	<LiftSimulatorServerMenuItem>NotChecked</LiftSimulatorServerMenuItem>
+</ElevateDocument>

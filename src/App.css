@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 200px;
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+}
+
+/* Adjust main content when sidebar is collapsed */
+.sidebar.collapsed ~ .main-content {
+  margin-left: 50px;
+}
