@@ -1,3 +1,5 @@
+# Files and directories to ignore
+public.data_dev
 # Logs
 logs
 *.log
