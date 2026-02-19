@@ -1,12 +1,13 @@
-# Express Backend Server
+# Python Backend Server
 
-This Express server provides API endpoints for the Vertiflow React application and serves static data files.
+This Python server (FastAPI) provides API endpoints for the Vertiflow React application and serves static data files.
 
 ## Features
 
 - **API Endpoint**: `/api/data-structure` - Returns the directory structure of your data files
-- **Static Files**: Serves CSV, feather, and parquet files from `/data_dev`
-- **Production Ready**: Serves the built React app in production mode
+- **API Endpoint**: `/api/data-pack` - Loads dataframe files for selected runs
+- **API Endpoint**: `/api/save-dataframe` - Saves dataframe payloads to `public/data_dev`
+- **Static Files**: Serves CSV, feather, parquet, and other files from `/data_dev`
 
 ## Development
 
@@ -16,29 +17,26 @@ Run the backend server alongside Vite during development:
 # Terminal 1 - Run Vite dev server (React frontend)
 npm run dev
 
-# Terminal 2 - Run Express server (Backend API)
-npm run server:dev
+# Terminal 2 - Create/activate Python env (optional)
+python -m venv .venv
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+
+# Install backend dependencies
+pip install -r server/requirements.txt
+
+# Run Python backend API (port 3000 by default)
+python server/python_server.py
 ```
 
 The API will be available at `http://localhost:3000`
-
-## Production
-
-Build and run for production:
-
-```bash
-# Build React app
-npm run build
-
-# Start production server (serves both API and built React app)
-npm start
-```
 
 ## Environment Variables
 
 You can configure the API URL in your React app:
 
 - `VITE_API_URL` - Backend API URL (default: `http://localhost:3000` in development)
+- `PORT` - Python backend port (default: `3000`)
 
 ## API Endpoints
 
@@ -57,6 +55,40 @@ Returns the hierarchical structure of your data directory.
       }
     }
   }
+}
+```
+
+### POST /api/data-pack
+
+Loads dataframes based on a selected simulation tree.
+
+**Request Example:**
+```json
+{
+  "url": "C:/.../public/data_dev/Project1/Direct-3Zone-DD-Lunch/South Tower - Office - High Zone/605",
+  "simTree": {
+    "1": {
+      "liftLogbooks": ["lift_logbook.csv"],
+      "timelineLogbooks": ["timeline_logbook_1.csv"],
+      "passengerLogbooks": ["passenger_logbook.csv"]
+    }
+  }
+}
+```
+
+### POST /api/save-dataframe
+
+Saves records to a file under `public/data_dev`.
+
+**Request Example:**
+```json
+{
+  "path": "Project1/output/new_data.csv",
+  "format": "csv",
+  "records": [
+    { "a": 1, "b": 2 },
+    { "a": 3, "b": 4 }
+  ]
 }
 ```
 

@@ -8,8 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server:dev": "node server/server.js",
-    "server:prod": "NODE_ENV=production node server/server.js",
+    "server:dev": "python server/python_server.py",
+    "server:prod": "python server/python_server.py",
     "start": "npm run server:prod"
   },
   "dependencies": {

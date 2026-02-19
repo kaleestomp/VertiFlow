@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { loadCSV,toEChartsDataset } from '../utils/dataframeUtils';
-import { readZone, getDataStructure } from '../utils/fileStatus';
 
 /**
  * Example: Line chart using DataFrame data with ECharts dataset
@@ -19,8 +18,6 @@ function DataFrameChart() {
         const df = await loadCSV('/data_dev/Direct-3Zone-DD-Lunch/South Tower - Office - High Zone/605/compiled/timeline_logbook.csv');
         // Convert to ECharts dataset format
         const dataset = toEChartsDataset(df);
-        const r = await getDataStructure();
-        console.log('Data structure from API:', r);
         // console.log('Dataset for ECharts:', dataset);
         
         // Get column names to use first numeric columns for chart
