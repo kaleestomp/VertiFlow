@@ -1,4 +1,5 @@
 import os
+import time
 import json
 import pandas as pd
 from pathlib import Path
@@ -52,6 +53,7 @@ def get_option_dir_structure(path: str = Query(..., description="Path relative t
 
 @app.get("/api/read-sim")
 def read_sim(path: str = Query(..., description="Path relative to public/data_dev")):
+    time_start = time.perf_counter()
     data_pack = {}
     sim_path = _safe_resolve(path)
     if not sim_path.exists() or not sim_path.is_dir():
@@ -63,20 +65,37 @@ def read_sim(path: str = Query(..., description="Path relative to public/data_de
     }
     runs = [f for f in sim_path.iterdir() if f.is_dir()]
     for run in runs:
+        if run.name != "compiled": continue
         # Scan files inside each run
         files = [f for f in run.iterdir() if f.is_file() and f.name.endswith('.feather')]
-        # Categorize files by type
         for f in files:
-            if "timeline_logbook" in f.name:
-                df = pd.read_feather(f, columns=['time', 'queue_length', 'mean_wait_time', 'mean_travel_time'])
-                df_json = df.to_dict(orient="records") #json.loads(df.to_json(orient="records"))
-                lvlID = "all" if len(f.name.split("_")) == 2 else f.name.split("_")[-1].split(".")[0]
-                data_pack["TimelineLogbooks"].setdefault(lvlID, {})[run.name] = df_json
-            elif "passenger_logbook" in f.name:
-                df = pd.read_feather(f, columns=['wait_time', 'travel_time'])
-                df_json = df.to_dict(orient="records")
-                data_pack["PassengerLogbooks"][run.name] = df_json
+            # Read Timelines
+            if f.name.startswith("timeline_logbook"):
+                columns = ['time', 'queue_length', 'mean_wait_time', 'mean_travel_time']
+                if run.name == "compiled": columns += ['min_awt', 'max_awt', 'min_att', 'max_att']
+                df = pd.read_feather(f, columns = columns)
+                s = pd.to_numeric(df["time"], errors="coerce") % (24 * 3600)
+                df["time"] = pd.to_timedelta(s, unit="s").dt.components.apply(
+                    lambda r: f"{int(r.hours):02}:{int(r.minutes):02}:{int(r.seconds):02}", axis=1
+                )
+                df["awt_range"] = df["max_awt"] - df["min_awt"]
+                df["att_range"] = df["max_att"] - df["min_att"]
+                df = df.drop(columns=["max_awt", "max_att"]).round(1)
 
+                data = [df.columns.tolist()] + df.values.tolist()
+                # df_json = df.to_dict(orient="records") #json.loads(df.to_json(orient="records"))
+
+                lvlID = "all" if len(f.name.split("_")) == 2 else f.name.split("_")[-1].split(".")[0]
+                data_pack["TimelineLogbooks"].setdefault(lvlID, {})[run.name] = data
+
+            elif f.name.startswith("passenger_logbook"):
+                df = pd.read_feather(f, columns=['wait_time', 'travel_time']).round(1)
+                data = [df.columns.tolist()] + df.values.tolist()
+                data_pack["PassengerLogbooks"][run.name] = data
+
+    
+    elapsed = time.perf_counter() - time_start
+    print(f"Read sim data in {elapsed:.2f} seconds")
     return data_pack
 
 @app.get("/api/file")

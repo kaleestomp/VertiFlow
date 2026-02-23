@@ -27,8 +27,9 @@ function Page1() {
         // const data = JSON.parse(text);
         // console.log(data);
         const simDataPack = await fetchSimDataPack(path);
-        console.log('Fetched Sim Data Pack:', simDataPack);
         const simID = path.split('/').slice(-1)[0];
+        console.log(`Fetched ${simID} Sim Data Pack:`);
+        // console.log(simDataPack)
         setDataPack(prevData => ({ ...prevData, [simID]: simDataPack }));
         return simDataPack;
       } catch (error) {
@@ -42,38 +43,6 @@ function Page1() {
       readSim(relativePath);
     });
   }, []);
-  // useEffect(() => {
-  //   const fetchDataStructure = async () => {
-  //     try {
-  //       const __proj = 'Project1';
-  //       const __option = 'Direct-3Zone-DD-Lunch';
-  //       const dataTree = await fetchDirTree(`${__proj}/${__option}`);
-  //       console.log('Fetched Data Tree:', dataTree);
-  //       setDataDirTree(dataTree);
-  //       return dataTree;
-
-  //     } catch (error) {
-  //       console.error('Error fetching data structure:', error);
-  //     }
-  //   };
-  //   const fetchScenarioData = async (dataTree, zone, configID) => {
-  //     try {
-  //       const simDirTree = {
-  //         url: `${dataTree.url}/${zone}/${configID}`,
-  //         simTree: dataTree.zones[zone].configs[configID],
-  //       };
-  //       const simData = await fetchSimDataPack(simDirTree);
-  //       console.log('Fetched Sim Data:', simData);
-  //       setDataPack(prevData => ({ ...prevData, [configID]: simData }));
-  //     } catch (error) {
-  //       console.error('Error fetching sim data:', error);
-  //     }
-  //   }
-
-  //   fetchDataStructure().then((dataTree) => {
-  //     fetchScenarioData(dataTree, 'South Tower - Office - High Zone', '605');
-  //   });
-  // }, []);
 
   return (
     <div className="page1-container">
@@ -81,11 +50,11 @@ function Page1() {
       
       <div className="container-wrapper">
         <div className="empty-container container-1">
-          <DataFrameChart />
+          <DataFrameChart data={dataPack[605]?.TimelineLogbooks?.all?.compiled ?? []} />
         </div>
         
         <div className="empty-container container-2">
-          <DataFrameGrid />
+          <DataFrameGrid data={dataPack[605]?.TimelineLogbooks?.all?.compiled ?? []} />
         </div>
       </div>
     </div>
