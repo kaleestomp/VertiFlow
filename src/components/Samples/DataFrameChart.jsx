@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
-import { colorConfig } from '../utils/Config';
+import { colorConfig } from '../../utils/Config';
 
 /**
  * Example: Line chart using DataFrame data with ECharts dataset
@@ -19,6 +19,11 @@ function DataFrameChart({data}) {
   const isLoading = !Array.isArray(data) || data.length < 2 || !Array.isArray(data[0]);
   const loadingState = {
     // title: { text: 'Timeline', left: 'center' },
+    title: {text: 'Timeline', left: 'center'},
+    // I can do this hahaha 
+    // I'm not sure how this usually goes but it is reall pretty 
+    // How do you type with one hand anywauys
+    // I bet i can do it yooooooo yoooo yoooo   
     // graphic: {
     //   type: 'text',
     //   left: 'center',
@@ -34,17 +39,19 @@ function DataFrameChart({data}) {
   const lineSeries = {
       name: "Average",
       type: "line",
-      encode: {x: "time", y: "mean_wait_time"},
-      symbol: "none",
-      lineStyle: {"color": colorConfig.primaryBlue, "width": 5.4},
+      encode: {x: "time", y: "awt"},
+      symbol: "circle",
+      symbolSize: 10,
+      showSymbol: false,
+      lineStyle: {"color": colorConfig.primaryBlue, "width": 2.4},
       itemStyle: {"color": colorConfig.primaryBlue}, // This controls the symbol in tooltip panel
       emphasis: {
-          focus: null, 
-          scale: true,
-          lineStyle: {"color": colorConfig.primaryBlue, "width": 5.4},
+        focus: "series",
+        scale: false,
+          lineStyle: {color: colorConfig.primaryBlue},
       },
       tooltip: {"show": true, "trigger": "item"},
-      z: 5,
+      z: 15,
   };
   const domainSeries = [
     {
@@ -141,22 +148,19 @@ function DataFrameChart({data}) {
       source: data  // Use DataFrame data directly
     },
     xAxis: {
-      type: 'category'
+      type: 'category',
     },
     yAxis: {
       type: 'value'
     },
     series: allSeries,
-    // {
-    //     type: 'line',
-    //     smooth: false,
-    //     name: "queue_length",
-    //     encode: {x: "time", y: "queue_length"}
-    // },
+    axisPointer: {
+      link: {xAxisIndex: 'all'},
+    },
     tooltip: {
         trigger: "axis",
         // position: [50, 5],
-        axisPointer: {"type": "cross"},
+      axisPointer: {"type": "cross", "animation": false},
         snap: true,
         z: 25,
     },
@@ -238,11 +242,6 @@ function DataFrameChart({data}) {
         option={chartOption} 
         style={{ height: '100%', width: '100%' }}
         showLoading={isLoading}
-        onEvents={{
-          updateAxisPointer: (params) => {
-            console.log('UpdateAxisPointer:', params.axesInfo.length > 0 ? `${params.axesInfo[0].axisDim}-${params.axesInfo[0].value}` : 'No axis info');
-          }
-        }}
       />
     </div>
   );

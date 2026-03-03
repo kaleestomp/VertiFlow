@@ -28,13 +28,3 @@ export async function fetchSimDataPack(relativePath) {
   return data;
 }
 
-export async function fetchLocalFile(relativePath) {
-  const params = new URLSearchParams({ path: relativePath });
-  const response = await fetch(`${API_BASE}/api/file?${params}`);
-
-  if (!response.ok) {
-    throw new Error(`Failed to fetch file: ${response.status} ${response.statusText}`);
-  }
-
-  return response.text(); // use response.json() if the file is JSON
-}

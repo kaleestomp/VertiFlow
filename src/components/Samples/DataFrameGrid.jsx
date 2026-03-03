@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
-import { fromDataset, toMUIDataGrid } from '../utils/dataframeUtils';
+import { fromDataset, toMUIDataGrid } from '../../utils/dataframeUtils';
 import './DataFrameGrid.css';
 
 function DataFrameGrid({data}) {

@@ -1,0 +1,109 @@
+/* ------------------------------------------------------ */
+/* Card style */
+.empty-container.container-timeline {
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 40px;
+  gap: 0px;
+
+
+  /* position: absolute; */
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  /* padding: 20px; */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+/* ------------------------------------------------------ */
+/* Header style */
+
+.timeline-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.left, .center, .right {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex: 0 0 auto;
+}
+
+.center {
+  flex: 1 1 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  flex: 0 0 auto;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ------------------------------------------------------ */
+/* Pagination style */
+
+.MuiPaginationItem-root:focus {
+  outline: none !important;
+  /* box-shadow: 0 0 0 0px #1976d2; */
+}
+
+/* ------------------------------------------------------ */
+/* Title style */
+
+.timeline-title-container {
+  width: 260px;
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjust spacing as needed */
+}
+.timeline-title-container .MuiFab-root {
+  box-shadow: none !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  outline: none;
+}
+.timeline-header-container .MuiFab-extended {
+  padding-inline-end:  16px !important;
+}
+.timeline-title-container .MuiFab-root:not(.MuiFab-extended) {
+  width: 32px !important;
+}
+
+/* Animation style */
+.timeline-title-container .MuiFab-root {
+  transition: width 0.25s cubic-bezier(0.1, 0, 0.58, 1.0) !important;
+  transform-origin: left !important;
+}
+.timeline-title-container .fab-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* ------------------------------------------------------ */
+/* Toolbar style */
+
+.timeline-toolbar-container {
+  width: 260px;
+}
+/* IconButton style */
+.MuiIconButton-root:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 0px #1976d2; */
+}

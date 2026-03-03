@@ -3,7 +3,7 @@ import cors from 'cors';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { loadCSVtoJSON } from '../src/utils/dataframeUtils.js';
+import { loadCSVtoJSON } from '../utils/dataframeUtils.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

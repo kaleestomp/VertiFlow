@@ -52,6 +52,43 @@ def get_option_dir_structure(path: str = Query(..., description="Path relative t
     raise HTTPException(status_code=500, detail="Failed to scan data directory")
 
 @app.get("/api/read-sim")
+def fetch_timeline_lvl1(path: str = Query(..., description="Path relative to public/data_dev")):
+    
+    sim_path = _safe_resolve(path)
+    if not sim_path.exists() or not sim_path.is_dir():
+        raise HTTPException(status_code=404, detail="Directory not found")
+    
+    time_start = time.perf_counter()
+    data_pack = {
+        "Zone": sim_path.parent.name,
+        "SimID": sim_path.name,
+        "TimelineLogbooks": {},
+    }
+    # Read Dataframe ----
+    file = sim_path / "compiled" / "timeline_logbook.feather"
+    columns = ['time', 'queue_length', 'mean_wait_time', 'min_awt', 'max_awt']
+    df = pd.read_feather(file, columns = columns)
+    elapsed = time.perf_counter() - time_start
+    print(f"Read sim data in {elapsed:.2f} seconds")
+
+    # Minor processing ----
+    df['awt'] = df['mean_wait_time']
+    df["awt_range"] = df["max_awt"] - df["min_awt"]
+    df = df.drop(columns=["max_awt", 'mean_wait_time'])
+    df = df.round(1)
+
+    elapsed = time.perf_counter() - time_start
+    print(f"Processed sim data @ {elapsed:.2f} seconds")
+    # Serialize DataFrame to List ----
+    data = [df.columns.tolist()] + df.values.tolist()
+    data_pack["TimelineLogbooks"].setdefault("all", {})["compiled"] = data
+    
+    elapsed = time.perf_counter() - time_start
+    print(f"Loaded sim data @ {elapsed:.2f} seconds")
+    return data_pack
+
+
+@app.get("/api/read-sim2")
 def read_sim(path: str = Query(..., description="Path relative to public/data_dev")):
     time_start = time.perf_counter()
     data_pack = {}
@@ -60,6 +97,8 @@ def read_sim(path: str = Query(..., description="Path relative to public/data_de
         raise HTTPException(status_code=404, detail="Directory not found")
     # Scan Runs inside each SimFolder
     data_pack = {
+        "Zone": sim_path.parent.name,
+        "SimID": sim_path.name,
         "TimelineLogbooks": {},
         "PassengerLogbooks": {},
     }

@@ -1,62 +1,74 @@
 import React, { useEffect, useState } from 'react';
-import DataFrameChart from '../components/DataFrameChart';
-import DataFrameGrid from '../components/DataFrameGrid';
+import TimelineCard from '../components/TimelineCard/TimelineCard';
+import LobbyChart from '../components/LobbyChart/LobbyChart';
+import DataFrameChart from '../components/Samples/DataFrameChart';
+import DataFrameGrid from '../components/Samples/DataFrameGrid';
 import { fetchDirTree, fetchSimDataPack} from '../utils/fileStatus';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateDirectoryTree, addSim } from '../utils/simSlice';
+import ThreeViewport from '../components/ThreeViewport';
+
 import './Page1.css';
 
 function Page1() {
-  const [dataDirTree, setDataDirTree] = useState({});
-  const [dataPack, setDataPack] = useState({});
+  const [simData, setSimData] = useState({});
+
+  const dispatch = useDispatch();
+  const simState = useSelector((state) => state.simState);
+
   useEffect(() => {
-    const readDir = async () => {
+
+    const getDirectoryTree = async (optionPath) => {
+      // Request / Update table of contents for a selected Option directory
+      // Example optionPath: 'Project1/Direct-3Zone-DD-Lunch'
       try {
-        // const text = await fetchLocalFile('Project1/Direct-3Zone-DD-Lunch/upload_stamp.json');
-        // const data = JSON.parse(text);
-        // console.log(data);
-        const dirTree = await fetchDirTree('Project1/Direct-3Zone-DD-Lunch');
-        console.log('Fetched Option Directory Structure:', dirTree);
-        setDataDirTree(dirTree);
+        const dirTree = await fetchDirTree(optionPath);
+        dispatch(updateDirectoryTree({root: optionPath, tree: dirTree}));
+        console.log('Received Option Directory Tree:', dirTree);
         return dirTree;
       } catch (error) {
-        console.error('Error loading file:', error);
+        console.error('Error Checking Option Directory:', error);
       }
     };
-    const readSim = async (path) => {
+    const addSim_lvl1 = async (simID, zone, root) => {
+      // Request / Update sim data for a selected sim
       try {
-        // const text = await fetchLocalFile('Project1/Direct-3Zone-DD-Lunch/upload_stamp.json');
-        // const data = JSON.parse(text);
-        // console.log(data);
-        const simDataPack = await fetchSimDataPack(path);
-        const simID = path.split('/').slice(-1)[0];
-        console.log(`Fetched ${simID} Sim Data Pack:`);
+        const simPath = `${root}/${zone}/${simID}`;
+        const simDataPack = await fetchSimDataPack(simPath);
+        dispatch(addSim({ simDataPack }));
+        setSimData(prevData => ({ ...prevData, [`${simID}-${zone}`]: simDataPack }));
+        console.log(`Received Sim Data Pack: ${simID}-${zone}`);
         // console.log(simDataPack)
-        setDataPack(prevData => ({ ...prevData, [simID]: simDataPack }));
-        return simDataPack;
       } catch (error) {
-        console.error('Error loading file:', error);
+        console.error(`Error fetching sim ${simID}-${zone}:`, error);
       }
     };
 
-    readDir().then((dirTree) => {
-      const relativePath = `${dirTree.url}/${Object.keys(dirTree.zones)[0]}/${dirTree.zones[Object.keys(dirTree.zones)[0]][0]}`;
-      // console.log(relativePath);
-      readSim(relativePath);
+    const optionPath = 'Project1/Direct-3Zone-DD-Lunch';
+    getDirectoryTree(optionPath).then((dirTree) => {
+      const zone = Object.keys(dirTree.zones)[0];
+      const simID = dirTree.zones[zone][0];
+      const root = dirTree.url
+      addSim_lvl1(simID, zone, root);
     });
+
   }, []);
 
   return (
     <div className="page1-container">
       <h1>Page 1</h1>
-      
-      <div className="container-wrapper">
-        <div className="empty-container container-1">
-          <DataFrameChart data={dataPack[605]?.TimelineLogbooks?.all?.compiled ?? []} />
-        </div>
+      <LobbyChart queue={15} worstQueue={30} />
+      {/* <ThreeViewport /> */}
+      <div className="floating-wrapper">
+        <TimelineCard simData={simData} />
+      </div>
+      {/* <div className="container-wrapper">
+        <TimelineCard simData={simData} />
         
         <div className="empty-container container-2">
-          <DataFrameGrid data={dataPack[605]?.TimelineLogbooks?.all?.compiled ?? []} />
+          <DataFrameGrid data={simData[Object.keys(simData)[0]]?.TimelineLogbooks?.all?.compiled ?? []} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
