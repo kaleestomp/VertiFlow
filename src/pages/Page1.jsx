@@ -57,7 +57,7 @@ function Page1() {
   return (
     <div className="page1-container">
       <h1>Page 1</h1>
-      <LobbyChart queue={15} worstQueue={30} />
+      <LobbyChart worstQueue={80} />
       {/* <ThreeViewport /> */}
       <div className="floating-wrapper">
         <TimelineCard simData={simData} />

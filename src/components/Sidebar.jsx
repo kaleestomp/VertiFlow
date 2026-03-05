@@ -25,6 +25,9 @@ function Sidebar() {
             <li>
               <Link to="/page2">Page 2</Link>
             </li>
+            <li>
+              <Link to="/drag-demo">Drag Demo</Link>
+            </li>
           </ul>
         </nav>
       )}
