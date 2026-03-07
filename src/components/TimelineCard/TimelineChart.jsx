@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import ReactECharts from 'echarts-for-react';
 import { colorConfig } from '../../utils/Config';
-import { fill } from 'three/src/extras/TextureUtils.js';
-import { data } from 'react-router-dom';
 const STYLE = {
   chartWidth: "100%",
   chartHeight: 500,
@@ -18,8 +16,8 @@ const STYLE = {
 /**
  * NOTE
  */
-function TimelineChart({data, _style}) {
-  
+function TimelineChart({ data, _style, onHover }) {
+  // console.log('TimelineChart Rendered with data:', data);
   const style = {...STYLE, ..._style};
   const sim_id = 605;
   const isLoading = !Array.isArray(data) || data.length < 2 || !Array.isArray(data[0]);
@@ -31,7 +29,7 @@ function TimelineChart({data, _style}) {
   // useMemo avoids the extra render cycle caused by useEffect + setState.
   // It keeps your code cleaner and more efficient for computed values used directly in FIRST render.
   
-  const chartOption = React.useMemo(() => {
+  const chartOption = useMemo(() => {
     if (isLoading) return loadingState;
     const lineSeries = {
       name: "Average",
@@ -250,6 +248,33 @@ function TimelineChart({data, _style}) {
       },
     };
   }, [data, isLoading, style, sim_id]);
+
+  const [hoverPoint, setHoverPoint] = useState(null);
+  // console.log(hoverPoint);
+  const handleAxisHover = useCallback((event) => {
+    const axisInfo = event?.axesInfo?.[0];
+    if (!axisInfo || !Array.isArray(data) || data.length === 0) return;
+
+    const rawValue = axisInfo.value;
+    let index = Number(rawValue);
+
+    if (!Number.isInteger(index)) {
+      const valueLabel = axisInfo.valueLabel;
+      index = data.findIndex((row) => row?.[0] === valueLabel || row?.[0] === rawValue);
+    }
+
+    if (index < 0 || index >= data.length) return;
+
+    const x = data[index]?.[0];
+    const queue = data[index]?.[1];
+    const nextPoint = { x, y: {5: queue, 6: queue } };
+    setHoverPoint(nextPoint);
+    onHover?.(nextPoint);
+  }, [data, onHover]);
+
+  const chartEvents = useMemo(() => ({
+    updateAxisPointer: handleAxisHover,
+  }), [handleAxisHover]);
   
   if (!chartOption) {
     return <div>Loading chart...</div>;
@@ -261,6 +286,7 @@ function TimelineChart({data, _style}) {
         option={chartOption} 
         style={{ height: '100%', width: '100%' }}
         showLoading={isLoading}
+        onEvents={chartEvents}
       />
     </div>
   );

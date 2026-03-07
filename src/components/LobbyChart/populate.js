@@ -20,13 +20,14 @@ export function getCoordinates(heads, roomDims, origin = [0, 0]) {
   const personArea = Math.max((width * length) / heads, absMinAreaPerHead);
 
   let targetDist = Math.sqrt(personArea);
-  const distLevels = [];
-  for (let i = 0; i < 4; i++) {
-    if (targetDist >= Math.sqrt(absMinAreaPerHead)) {
-      distLevels.push(targetDist);
-      targetDist -= 0.4;
-    } else { break; }
-  } // [1.2, 0.8, 0.4, ...]
+  const distLevels = [1.2, 0.8, 0.4, 0.1];
+  // for (let i = 0; i < 4; i++) {
+  //   if (targetDist >= Math.sqrt(absMinAreaPerHead)) {
+  //     distLevels.push(targetDist);
+  //     targetDist -= 0.4;
+  //   } else { break; }
+  // } // [1.2, 0.8, 0.4, ...]
+
   // console.log('distLevels', distLevels, targetDist);
   // Loop through each head and try to find a non-colliding location
   const maxAttempts = 20;
@@ -76,11 +77,12 @@ export function getCoordinates(heads, roomDims, origin = [0, 0]) {
     }
   }
 
-  // for (let i = 0; i < excess; i++) {
-  //   let x = Math.random() * (width - distLevels[0]) + distLevels[0] / 2;
-  //   let y = Math.random() * (length - distLevels[0]) + distLevels[0] / 2;
-  //   coordinates.push([x, y]);
-  // }
+  // Scatter Excess People (<0.1 m2) Rnadomly
+  for (let i = 0; i < excess; i++) {
+    let x = Math.random() * (width - distLevels[0]) + distLevels[0] / 2;
+    let y = Math.random() * (length - distLevels[0]) + distLevels[0] / 2;
+    coordinates.push([x, y]);
+  }
 
   // console.log(`Warning: ${forcedFit + excess} people can not fit.`);
 

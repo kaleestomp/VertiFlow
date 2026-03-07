@@ -13,7 +13,8 @@ export function initializeRoom(x, y) {
             [x * -0.5, y * -0.5], [x * -0.5, y * 0.5],
             [x * 0.5, y * 0.5], [x * 0.5, y * -0.5],
             [x * -0.5, y * -0.5],
-        ]
+        ],
+        center: [0, 0]
     };
 }
 
@@ -21,10 +22,12 @@ export function initializeRoom(x, y) {
 export function getRoomFrHandle(handleCoords) {
     const updatedLines = getLines(handleCoords);
     const updatedHandles = adjustHandle(updatedLines);
+    const center = getCenter(handleCoords);
     return {
         ...getDimensions(handleCoords),
         handles: updatedHandles,
         lines: updatedLines,
+        center: center,
     };
 };
 
@@ -42,6 +45,13 @@ function getDimensions(handleCoords) {
     const yDim = Math.abs(top[1] - bottom[1]);
     return { x: xDim, y: yDim };
 };
+
+function getCenter(handleCoords) {
+    return [
+        (handleCoords[0][0] + handleCoords[2][0]) / 2,
+        (handleCoords[1][1] + handleCoords[3][1]) / 2,
+    ]
+}
 
 function adjustHandle(lines) {
     const [pt1, pt2, pt3, pt4] = lines;

@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import TimelineCard from '../components/TimelineCard/TimelineCard';
-import LobbyChart from '../components/LobbyChart/LobbyChart';
-import DataFrameChart from '../components/Samples/DataFrameChart';
-import DataFrameGrid from '../components/Samples/DataFrameGrid';
+import LobbyCard from '../components/LobbyChart/LobbyCard';
 import { fetchDirTree, fetchSimDataPack} from '../utils/fileStatus';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDirectoryTree, addSim } from '../utils/simSlice';
+import Slider from '@mui/material/Slider';
 import ThreeViewport from '../components/ThreeViewport';
 
 import './Page1.css';
@@ -15,6 +14,14 @@ function Page1() {
 
   const dispatch = useDispatch();
   const simState = useSelector((state) => state.simState);
+
+  const [maxQueue, setMaxQueue] = useState({5: 80, 6: 80});
+  // const [queue, setQueue] = useState(maxQueue);
+  const [timeSlice, setTimeSlice] = useState({x: '00:00:00', y: {5: maxQueue[5], 6: maxQueue[6]}});
+  const onTimelineHover = (value) => {
+    // console.log('Timeline Hover Value:', value);
+    setTimeSlice(value);
+  }
 
   useEffect(() => {
 
@@ -56,11 +63,11 @@ function Page1() {
 
   return (
     <div className="page1-container">
-      <h1>Page 1</h1>
-      <LobbyChart worstQueue={80} />
+      {/* <h1>Page 1</h1> */}
+      <LobbyCard queue={timeSlice.y} maxQueue={maxQueue} />
       {/* <ThreeViewport /> */}
       <div className="floating-wrapper">
-        <TimelineCard simData={simData} />
+        <TimelineCard simData={simData} onHover={onTimelineHover} />
       </div>
       {/* <div className="container-wrapper">
         <TimelineCard simData={simData} />
