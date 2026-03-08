@@ -1,0 +1,57 @@
+TO DOS
+When user zooms out too far the grid gets squished. Add dynamic DataZoom max extent assignment based on screen size
+
+KEY BEHAVIOURS
+
+On RENDER:
+    useMemo fires; fetch room dimension; initailize room param (boundary lines, handles) as REF 
+    useMemo fires; initialize baseChartOption (dependent on PROP _styles)
+    useMemo fires; initialize chartSeries (using initial Room param)
+    useMemo fires; finalize chartOption;
+
+    Fetches Active Container Size
+    useEffect fires; initialize DataZoom extent based on initial room param; Protected by Guard to fire only once unless window size change -> to prevent [BUG] unwanted dataZoom reset during other user drag events.
+
+On PROP - WorstQueue: 
+    useMemo fires; Computes location register using room boundary
+On PROP - Queue:
+    useMemo fires; Slice location register to populate scatter plot
+On PROP - _style:
+    Re-initialize baseChartOption
+
+On EVENT - User Drag:
+    echart Graphic update fires; 
+        i. updates handles PX location for graphic elements;
+        ii. updates room parameters including room boundary, dimensions, handles;
+        iii. schedule Location Register recompute via LocVersion and timer;
+    useMemo fires (by LocVersion) on timed interval during drag and on drag end; 
+        Computes new location register using new room boundary
+On EVENT - User Zoom:
+    echart Graphic update fires; 
+        i. updates handles PX location for graphic elements;
+        ii. computes unitPX to rescale symbolSize;
+on EVENT - Window Resize:
+    echart Graphic update fires:
+        i. updates handles PX location for graphic elements;
+        ii. computes unitPX to rescale symbolSize;
+    useEffect fires:
+        i. update DataZoom extent based on REF room param;
+
+On STATE - unitPX:
+    useMemo fires; update symbolSize in chartSeries
+on STATE - LocVersion:
+    useMemo fires; Computes new location register using new room boundary; used to time updates on timer during user drag and on drag end
+on STATE - chartReady:
+    useEffect fires:
+        i. subscribe to echart DataZoom listeners to handle User Drag, Scaling Update update;
+        ii subscribe to window resize listeners to handle User Drag, DataZoom view extent, Scaling Update update;
+
+RESOLVED BUGS:
+    1. DataZoom Reset:
+        implemented guards to update dataZoom extent only once until window resize;
+    2. Window Size initialize on 0/-:
+        implemented logic to ensure unitPX is always > 0;
+
+ABONDONED FEATURE:
+    1. xAixs extend update on User Drag:
+        dataZoom view extent reset is too disruptive; opted for initializing a STATIC, LARGE axis extent at start instead;

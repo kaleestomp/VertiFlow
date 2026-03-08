@@ -35,7 +35,6 @@ export default function LobbyChart({ queue, maxQueue, _style = {} }) {
     // Trigged [ONMOUNT]
     const initialRoom = useMemo(() => {
         const { x, y } = initialDimensions;
-        const rooms = initializeRoom(x, y);
         return initializeRoom(x, y);
     }, []);
     const roomRef = useRef(initialRoom);

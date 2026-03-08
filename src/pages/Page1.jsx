@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TimelineCard from '../components/TimelineCard/TimelineCard';
-import LobbyCard from '../components/LobbyChart/LobbyCard';
+// import LobbyCard from '../components/LobbyChart/LobbyCard';
+import LobbyCard from '../components/MultiLobbyChart/LobbyCard';
 import { fetchDirTree, fetchSimDataPack} from '../utils/fileStatus';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateDirectoryTree, addSim } from '../utils/simSlice';
@@ -15,9 +16,9 @@ function Page1() {
   const dispatch = useDispatch();
   const simState = useSelector((state) => state.simState);
 
-  const [maxQueue, setMaxQueue] = useState({5: 80, 6: 80});
+  const [maxQueue, setMaxQueue] = useState({5: 60, 6: 80, 7: 90});
   // const [queue, setQueue] = useState(maxQueue);
-  const [timeSlice, setTimeSlice] = useState({x: '00:00:00', y: {5: maxQueue[5], 6: maxQueue[6]}});
+  const [timeSlice, setTimeSlice] = useState({x: '00:00:00', y: {5: maxQueue[5], 6: maxQueue[6], 7: maxQueue[7]}});
   const onTimelineHover = (value) => {
     // console.log('Timeline Hover Value:', value);
     setTimeSlice(value);

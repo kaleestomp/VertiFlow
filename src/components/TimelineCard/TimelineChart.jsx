@@ -267,7 +267,7 @@ function TimelineChart({ data, _style, onHover }) {
 
     const x = data[index]?.[0];
     const queue = data[index]?.[1];
-    const nextPoint = { x, y: {5: queue, 6: queue } };
+    const nextPoint = { x, y: {5: queue, 6: queue, 7: queue } };
     setHoverPoint(nextPoint);
     onHover?.(nextPoint);
   }, [data, onHover]);
