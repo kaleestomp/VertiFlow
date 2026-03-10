@@ -1,6 +1,6 @@
 // Initialize Room
 export function initializeRoom(x, y, c = [0,0]) {
-    console.log('Initial Rooms:', c);
+    // console.log('Initial Rooms:', c);
     return {
         x: x,
         y: y,

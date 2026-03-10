@@ -64,7 +64,6 @@ function Page1() {
 
   return (
     <div className="page1-container">
-      {/* <h1>Page 1</h1> */}
       <LobbyCard queue={timeSlice.y} maxQueue={maxQueue} />
       {/* <ThreeViewport /> */}
       <div className="floating-wrapper">

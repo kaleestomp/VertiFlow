@@ -1,0 +1,46 @@
+/* ------------------------------------------------------ */
+/* Header style */
+
+.timeline-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.left {
+  flex: 0 0 auto;
+}
+
+.center {
+  flex: 1 1 auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  flex: 0 0 auto;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ------------------------------------------------------ */
+/* Toolbar style */
+
+.timeline-toolbar-container {
+  width: 295px;
+}
+
+/* IconButton style */
+.MuiIconButton-root:focus {
+  outline: none;
+  /* box-shadow: 0 0 0 0px #1976d2; */
+}

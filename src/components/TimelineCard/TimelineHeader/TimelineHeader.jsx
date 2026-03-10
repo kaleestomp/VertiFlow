@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import TimelineToolbar from './TimelineToolbar';
 import TimelineTitle from './TimelineTitle';
+import ScenarioSelector from './ScenarioSelector';
+import './TimelineHeader.css';
 
 function TimelineHeader({ simData }) {
 
@@ -11,10 +13,7 @@ function TimelineHeader({ simData }) {
                 <TimelineTitle />
             </div>
             <div className="center">
-                <Pagination 
-                    count={10} 
-                    color="primary" 
-                    disabled={false} 
+                <ScenarioSelector 
                 />
             </div>
             <div className="right">

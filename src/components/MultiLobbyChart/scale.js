@@ -1,6 +1,6 @@
 import { useElementSize } from '../../utils/observer';
 
-export function getScaleInfo (style, winSize, rooms) {
+export function getScaleInfo (style, winSize, rooms) {    
 
     const { width, height } = winSize;
     const activeWidthPX = Math.max(1, (width ?? 0) - style.marginLeft - style.marginRight);
@@ -41,7 +41,7 @@ export function getZoomInfo (chart) {
   const dzY = opt.dataZoom?.[1] || {};
 
   // Prefer value window if present
-  const xStart = dzX.startValue ?? dzX.start;
+  const xStart = (dzX.startValue ?? dzX.start);
   const xEnd = dzX.endValue ?? dzX.end;
   const yStart = dzY.startValue ?? dzY.start;
   const yEnd = dzY.endValue ?? dzY.end;

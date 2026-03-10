@@ -7,6 +7,8 @@ import { useElementSize } from '../../utils/observer';
 import { getUnitPX, getScaleInfo } from './scale';
 import { icons as lobbyIcons } from './icons';
 
+// const bottomOffset = 200;
+
 const defaultDimensions = { x: 8, y: 4 };
 const themeColor = colorConfig.primaryBlue;
 const STYLE = {
@@ -24,7 +26,7 @@ const STYLE = {
 const LOADINGSTATE = {};
 
 export default function LobbyChart({ queue, maxQueue, _style = {} }) {
-    console.log(queue, maxQueue);
+    // console.log(queue, maxQueue);
     // LOADING STATE CHECK
     const isLoading = !(queue && Object.keys(queue).length > 0 && maxQueue && Object.keys(maxQueue).length > 0);
     // ----------------------------------------------------------------------------
@@ -637,7 +639,7 @@ export default function LobbyChart({ queue, maxQueue, _style = {} }) {
         return <div>Loading chart...</div>;
     }
     return (
-        <div ref={containerRef} style={{ width: '100%', height: style.chartHeight }}>
+        <div ref={containerRef} style={{ width: '100%', height: '100%' }}>
             <ReactECharts
                 ref={chartRef}
                 option={chartOption}

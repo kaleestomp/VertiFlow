@@ -1,0 +1,64 @@
+/* ------------------------------------------------------ */
+/* Scenario Selector style */
+.timeline-scenario-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.timeline-scenario-container .MuiFab-root {
+  box-shadow: none !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  outline: none;
+
+  transition: width 0.25s cubic-bezier(0.1, 0, 0.58, 1.0) !important;
+  transform-origin: left !important;
+}
+
+/* .timeline-scenario-container .MuiFab-extended {
+  padding: 0px !important;
+} */
+
+/* .timeline-scenario-container .MuiFab-root:not(.MuiFab-extended) {
+  width: 32px !important;
+} */
+
+.timeline-scenario-container .fab-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 100%;
+}
+.timeline-scenario-container .fab-text-extended{
+  padding-inline-start: 4px !important;
+  padding-inline-end: 8px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.timeline-scenario-container .fab-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+  /* line-height: 1; */
+}
+
+.timeline-scenario-container .fab-text-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding-inline: 4px !important;
+  font-size: 18px;
+  padding-inline: 0px;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+}

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';;
 import LobbyChart from './LobbyChart';
+import './LobbyCard.css'
 
 function LobbyCard({ queue, maxQueue }) {
     //className="three-viewport"
-    
+    //style={{ width: '100%', height: 760}
     return (  
-        <div style={{ width: '100%', height: 760}} >
+        <div className='lobby-viewport'>
             <LobbyChart queue={queue} maxQueue={maxQueue} />
         </div>
     );

@@ -5,8 +5,8 @@ const STYLE = {
   chartWidth: "100%",
   chartHeight: 500,
   marginLeft: 40,
-  marginRight: 40,
-  marginTop: 20,
+  marginRight: 15,
+  marginTop: 0,
   marginBottom: 50,
   dataZoomSliderHeight: 20,
   xRef: null,
@@ -18,34 +18,34 @@ const STYLE = {
  */
 function TimelineChart({ data, _style, onHover }) {
   // console.log('TimelineChart Rendered with data:', data);
-  const style = {...STYLE, ..._style};
+  const style = useMemo(() => ({ ...STYLE, ..._style }), [_style]);
   const sim_id = 605;
   const isLoading = !Array.isArray(data) || data.length < 2 || !Array.isArray(data[0]);
   const loadingState = {
-    title: {text: 'Timeline', left: 'center'},
+    title: { text: 'Timeline', left: 'center' },
   };
 
   // Why prefer useMemo for chartOption?
   // useMemo avoids the extra render cycle caused by useEffect + setState.
   // It keeps your code cleaner and more efficient for computed values used directly in FIRST render.
-  
+
   const chartOption = useMemo(() => {
     if (isLoading) return loadingState;
     const lineSeries = {
       name: "Average",
       type: "line",
-      encode: {x: "time", y: "awt"},
+      encode: { x: "time", y: "awt" },
       symbol: "circle",
       symbolSize: 10,
       showSymbol: false,
-      lineStyle: {"color": colorConfig.primaryBlue, "width": 2.4},
-      itemStyle: {"color": colorConfig.primaryBlue},
+      lineStyle: { "color": colorConfig.primaryBlue, "width": 2.4 },
+      itemStyle: { "color": colorConfig.primaryBlue },
       emphasis: {
         focus: "none",
         scale: false,
-        lineStyle: {color: colorConfig.primaryBlue},
+        lineStyle: { color: colorConfig.primaryBlue },
       },
-      tooltip: {"show": true, "trigger": "item"},
+      tooltip: { "show": true, "trigger": "item" },
       z: 15,
     };
     const domainSeries = [
@@ -53,22 +53,22 @@ function TimelineChart({ data, _style, onHover }) {
         name: "Domain",
         type: "line",
         stack: `domain_${sim_id}`,
-        encode: {x: "time", y: "min_awt"},
+        encode: { x: "time", y: "min_awt" },
         symbol: "none",
-        lineStyle: {"color": colorConfig.primaryBlue, "width": 0.25, "type": "dashed", "opacity": 1},
-        areaStyle: {"color": "transparent"},
-        emphasis: {"disabled": true, "focus": "none"},
+        lineStyle: { "color": colorConfig.primaryBlue, "width": 0.25, "type": "dashed", "opacity": 1 },
+        areaStyle: { "color": "transparent" },
+        emphasis: { "disabled": true, "focus": "none" },
         z: 1,
       },
       {
         name: "Domain",
         type: "line",
         stack: `domain_${sim_id}`,
-        encode: {x: "time", y: "awt_range"},
+        encode: { x: "time", y: "awt_range" },
         symbol: "none",
-        lineStyle: {"color": colorConfig.primaryBlue, "width": 0.25, "type": "dashed", "opacity": 1},
-        areaStyle: {"color": colorConfig.secondaryBlue, "opacity": 0.25},
-        emphasis: {"disabled": true, "focus": "none"},
+        lineStyle: { "color": colorConfig.primaryBlue, "width": 0.25, "type": "dashed", "opacity": 1 },
+        areaStyle: { "color": colorConfig.secondaryBlue, "opacity": 0.25 },
+        emphasis: { "disabled": true, "focus": "none" },
         z: 1,
       }
     ];
@@ -77,12 +77,12 @@ function TimelineChart({ data, _style, onHover }) {
       type: "scatter",
       symbol: "circle",
       symbolSize: 4,
-      itemStyle: {"opacity": 0.25, "color": colorConfig.primaryBlue},
+      itemStyle: { "opacity": 0.25, "color": colorConfig.primaryBlue },
       blendMode: 'source-over',
       large: true,
       largeThreshold: 200,
       silent: true,
-      tooltip: {"show": false},
+      tooltip: { "show": false },
       z: 4,
     };
     const intervalSeries = {
@@ -95,12 +95,12 @@ function TimelineChart({ data, _style, onHover }) {
       markLine: {
         silent: true,
         label: {
-          show: true, 
+          show: true,
           position: "insideEndBottom",
           color: colorConfig.secondaryGrey,
           formatter: (value) => {
             const timestamp = value.name;
-            const hhmm = timestamp.split(':')[0]  + ':' + timestamp.split(':')[1];
+            const hhmm = timestamp.split(':')[0] + ':' + timestamp.split(':')[1];
             return `${hhmm}`;
           },
         },
@@ -115,7 +115,7 @@ function TimelineChart({ data, _style, onHover }) {
           color: colorConfig.secondaryGrey,
           type: "dashed",
         },
-        arrow: {"show": false},
+        arrow: { "show": false },
         symbol: "none",
       },
       z: 99,
@@ -126,10 +126,10 @@ function TimelineChart({ data, _style, onHover }) {
       top: 5,
       right: STYLE.marginLeft,
       data: [
-        {name: "Domain", icon: "rect"},
-        {name: "Average", icon: "rect"},
-        {name: "Individual Wait Time", icon: "circle"},
-        {name: "Global Average", icon: "line"},
+        { name: "Domain", icon: "rect" },
+        { name: "Average", icon: "rect" },
+        { name: "Individual Wait Time", icon: "circle" },
+        { name: "Global Average", icon: "line" },
       ],
       selected: {
         "Domain": true,
@@ -137,11 +137,11 @@ function TimelineChart({ data, _style, onHover }) {
         "Global Average": true,
         "Individual Wait Time": true,
       },
-      itemStyle: {color: "rgb(200,200,200)"},
+      itemStyle: { color: "rgb(200,200,200)" },
     };
 
     return {
-      title: {show: false},
+      title: { show: false },
       tooltip: {
         trigger: 'axis',
       },
@@ -151,9 +151,12 @@ function TimelineChart({ data, _style, onHover }) {
       },
       xAxis: {
         type: 'category',
+        axisPointer: {
+          show: true,
+        },
         axisLabel: {
           formatter: (value) => {
-            const hhmm = value.split(':')[0]  + ':' + value.split(':')[1];
+            const hhmm = value.split(':')[0] + ':' + value.split(':')[1];
             return `${hhmm}`;
           }
         },
@@ -161,9 +164,11 @@ function TimelineChart({ data, _style, onHover }) {
       yAxis: {
         type: 'value',
         axisPointer: {
+          show: true,
           lineStyle: {
-            color: colorConfig.primaryBlack,
+            color: colorConfig.secondaryGrey,
           },
+          label: {formatter: (param) => `${Math.round(param.value)}p`,}
         },
         axisLabel: {
           formatter: (value) => `${value}p`,
@@ -171,17 +176,18 @@ function TimelineChart({ data, _style, onHover }) {
           verticalAlign: 'top',
           verticalAlignMaxLabel: 'top',
         },
-        
+
       },
       series: allSeries,
       axisPointer: {
-        link: {xAxisIndex: 'all'},
+        // link: [{ xAxisIndex: 'all' }],
+        snap: true,
       },
       tooltip: {
         trigger: "axis",
         showContent: false,
         axisPointer: {
-          type: "cross", 
+          type: "cross",
           animation: false,
           label: {
             backgroundColor: colorConfig.primaryBlack,
@@ -195,7 +201,7 @@ function TimelineChart({ data, _style, onHover }) {
         z: 25,
       },
       dataZoom: [
-        {type: 'inside'},
+        { type: 'inside' },
         {
           type: 'slider',
           height: style.dataZoomSliderHeight,
@@ -209,7 +215,7 @@ function TimelineChart({ data, _style, onHover }) {
           borderRadius: style.dataZoomSliderHeight / 2,
           dataBackground: {
             lineStyle: {
-              color: colorConfig.secondaryGrey, 
+              color: colorConfig.secondaryGrey,
               width: 0.25,
             },
             areaStyle: {
@@ -220,7 +226,7 @@ function TimelineChart({ data, _style, onHover }) {
           },
           selectedDataBackground: {
             lineStyle: {
-              color: colorConfig.primaryGrey, 
+              color: colorConfig.primaryGrey,
               width: 0.5,
             },
             areaStyle: {
@@ -247,43 +253,50 @@ function TimelineChart({ data, _style, onHover }) {
         bottom: style.marginBottom,
       },
     };
-  }, [data, isLoading, style, sim_id]);
+  }, [
+    data,
+    isLoading,
+    sim_id,
+    style.dataZoomSliderHeight,
+    style.marginBottom,
+    style.marginLeft,
+    style.marginRight,
+    style.marginTop,
+  ]);
 
-  const [hoverPoint, setHoverPoint] = useState(null);
-  // console.log(hoverPoint);
+  // const [hoverPoint, setHoverPoint] = useState(null);
   const handleAxisHover = useCallback((event) => {
     const axisInfo = event?.axesInfo?.[0];
     if (!axisInfo || !Array.isArray(data) || data.length === 0) return;
-
     const rawValue = axisInfo.value;
     let index = Number(rawValue);
-
     if (!Number.isInteger(index)) {
-      const valueLabel = axisInfo.valueLabel;
-      index = data.findIndex((row) => row?.[0] === valueLabel || row?.[0] === rawValue);
+      return;
+      // const valueLabel = axisInfo.valueLabel;
+      // index = data.findIndex((row) => row?.[0] === valueLabel || row?.[0] === rawValue);
     }
-
     if (index < 0 || index >= data.length) return;
-
+    
     const x = data[index]?.[0];
     const queue = data[index]?.[1];
-    const nextPoint = { x, y: {5: queue, 6: queue, 7: queue } };
-    setHoverPoint(nextPoint);
+    const nextPoint = { x, y: { 5: queue, 6: queue, 7: queue } };
+    // console.log('Timeline Hover Value:', data[index]);
+    // setHoverPoint(nextPoint);
     onHover?.(nextPoint);
   }, [data, onHover]);
 
   const chartEvents = useMemo(() => ({
     updateAxisPointer: handleAxisHover,
   }), [handleAxisHover]);
-  
+
   if (!chartOption) {
     return <div>Loading chart...</div>;
   }
 
   return (
-    <div style={{ width: '100%', height: '400px' }}>
-      <ReactECharts 
-        option={chartOption} 
+    <div style={{ width: '100%', height: '100%' }}>
+      <ReactECharts
+        option={chartOption}
         style={{ height: '100%', width: '100%' }}
         showLoading={isLoading}
         onEvents={chartEvents}

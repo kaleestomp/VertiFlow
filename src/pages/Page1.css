@@ -2,6 +2,15 @@
   padding: 20px;
   min-height: 100vh;
 }
+/* .page1-container {
+  position: relative;
+  padding: 20px;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+} */
 
 .page1-container h1 {
   margin-bottom: 30px;
