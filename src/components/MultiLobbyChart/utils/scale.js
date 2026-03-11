@@ -1,4 +1,4 @@
-import { useElementSize } from '../../utils/observer';
+// import { useElementSize } from '../../../utils/observer';
 
 export function getScaleInfo (style, winSize, rooms) {    
 

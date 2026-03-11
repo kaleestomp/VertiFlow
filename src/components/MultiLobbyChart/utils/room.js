@@ -97,3 +97,29 @@ export function getAxisLimitFrHandle(handleCoords, axisParam = {}) {
         yAxis 
     };
 }
+
+// Calculate Space per Person
+export function getSpacePerPerson(queue, rooms) {
+    // both rooms and queue are objects with matching roomIDs as keys
+    const spacePerPerson = Object.entries(rooms).reduce((acc, [roomID, room]) => {
+        const area = room.x * room.y;
+        const areaPerPerson = queue[roomID] !== 0 ? area / queue[roomID] : area;
+        const baseDiameter = Math.min(0.6, Math.sqrt(areaPerPerson / Math.PI)) * 2;
+        let dia = [baseDiameter, baseDiameter];
+        const r2 = Math.pow(baseDiameter * 0.5, 2);
+        if (dia[0] < 0.6 && areaPerPerson > 0.2121) {
+            dia = [0.6, ((areaPerPerson / Math.PI) / 0.3) * 2];
+        } else if (areaPerPerson <= 0.2121) {
+            dia = [r2 * (0.3 / (0.3 * 0.225)) * 2, r2 * (0.225 / (0.3 * 0.225)) * 2];
+        }
+        return {
+            ...acc,
+            [roomID]: {
+                area: areaPerPerson,
+                ellipseDiameter: dia,
+            }
+        }
+    }, {});
+    
+    return spacePerPerson;
+}

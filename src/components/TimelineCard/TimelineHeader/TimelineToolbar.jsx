@@ -13,7 +13,7 @@ import JoinFullRoundedIcon from '@mui/icons-material/JoinFullRounded';
 import QueryStatsRoundedIcon from '@mui/icons-material/QueryStatsRounded';
 
 function TLHeaderToolbar() {
-    const [showIndividual, setShowIndividual] = useState(false);
+    const [showIndividual, setShowIndividual] = useState(true);
     const [showLayers, setShowLayers] = useState(false);
     const [showInfo, setShowInfo] = useState(true);
     const [open, setOpen] = useState(true);

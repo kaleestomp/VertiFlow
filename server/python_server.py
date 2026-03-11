@@ -5,7 +5,7 @@ import pandas as pd
 from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 
 
 SERVER_DIR = Path(__file__).resolve().parent
@@ -143,6 +143,61 @@ def get_file(path: str = Query(..., description="Path relative to public/data_de
     if not file_path.exists() or not file_path.is_file():
         raise HTTPException(status_code=404, detail="File not found")
     return FileResponse(file_path)
+
+
+@app.get("/api/read-sim/chunks")
+def read_sim_chunks(path: str = Query(..., description="Path relative to public/data_dev")):
+    """Stream one DataFrame per chunk as NDJSON for progressive UI rendering."""
+    sim_path = _safe_resolve(path)
+    if not sim_path.exists() or not sim_path.is_dir():
+        raise HTTPException(status_code=404, detail="Directory not found")
+
+    def iter_chunks():
+        runs = [f for f in sim_path.iterdir() if f.is_dir()]
+        chunk_index = 0
+
+        for run in runs:
+            files = [f for f in run.iterdir() if f.is_file() and f.name.endswith('.feather')]
+            for f in files:
+                # Choose columns by file type so each dataframe is lean.
+                if f.name.startswith("timeline_logbook"):
+                    columns = ['time', 'queue_length', 'mean_wait_time', 'mean_travel_time']
+                    if run.name == "compiled":
+                        columns += ['min_awt', 'max_awt', 'min_att', 'max_att']
+                    df = pd.read_feather(f, columns=columns)
+                    if {'min_awt', 'max_awt'}.issubset(df.columns):
+                        df["awt_range"] = df["max_awt"] - df["min_awt"]
+                    if {'min_att', 'max_att'}.issubset(df.columns):
+                        df["att_range"] = df["max_att"] - df["min_att"]
+                    drop_cols = [c for c in ["max_awt", "max_att"] if c in df.columns]
+                    if drop_cols:
+                        df = df.drop(columns=drop_cols)
+                    df = df.round(1)
+                    chunk_type = "timeline"
+
+                elif f.name.startswith("passenger_logbook"):
+                    df = pd.read_feather(f, columns=['wait_time', 'travel_time']).round(1)
+                    chunk_type = "passenger"
+
+                else:
+                    continue
+
+                payload = {
+                    "chunk_index": chunk_index,
+                    "chunk_type": chunk_type,
+                    "run": run.name,
+                    "file": f.name,
+                    "rows": len(df),
+                    "data": [df.columns.tolist()] + df.values.tolist(),
+                }
+                chunk_index += 1
+                
+                # NDJSON: one JSON object per line.
+                yield json.dumps(payload) + "\n"
+
+        yield json.dumps({"done": True, "total_chunks": chunk_index}) + "\n"
+
+    return StreamingResponse(iter_chunks(), media_type="application/x-ndjson")
 
 
 if __name__ == "__main__":
