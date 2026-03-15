@@ -1,0 +1,49 @@
+.page1-secondary-sidebar {
+  position: fixed;
+  top: 0;
+  left: 200px;
+  width: var(--page1-sidecard-width, 300px);
+  height: 100vh;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.08);
+  z-index: 900;
+  padding: 20px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content .page1-secondary-sidebar {
+  left: 50px;
+}
+
+.page1-secondary-sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sidecard-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.sidecard-toggle-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.page1-secondary-sidebar.collapsed {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.page1-secondary-sidebar.collapsed .sidecard-toggle-btn {
+  right: 8px;
+}

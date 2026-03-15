@@ -9,14 +9,14 @@ function TimelineHeader({ simData }) {
 
     return (
         <div className="timeline-header-container">
-            <div className="left">
+            <div className="timeline-header-left">
                 <TimelineTitle />
             </div>
-            <div className="center">
+            <div className="timeline-header-center">
                 <ScenarioSelector 
                 />
             </div>
-            <div className="right">
+            <div className="timeline-header-right">
                 <TimelineToolbar />                
             </div>
         </div>

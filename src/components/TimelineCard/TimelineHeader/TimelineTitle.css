@@ -24,14 +24,6 @@
   transform-origin: left !important;
 }
 
-/* .timeline-title-container .MuiFab-extended {
-  padding: 0px !important;
-} */
-
-/* .timeline-title-container .MuiFab-root:not(.MuiFab-extended) {
-  width: 32px !important;
-} */
-
 .timeline-title-container .fab-icon {
   padding-inline: 0px !important;
   height: 33px;
@@ -48,15 +40,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   height: 24px;
-  /* max-width: 100%; */
-  /* padding-bottom:0px !important; */
-  /* display: inline-flex; */
-  /* align-items: flex-start; */
-  /* vertical-align: text-bottom; */
-  /* justify-content: left; */
-  /* width: fit-content; */
-  /* text-align: left; */
 }
-.timeline-title-container .fab-text .empty{
+
+.timeline-title-container .fab-text.empty {
   padding-inline-start: 0px !important;
 }

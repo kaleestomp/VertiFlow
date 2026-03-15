@@ -1,0 +1,137 @@
+# -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# ---- Data Types ----
+def to_bool(value):
+    if isinstance(value, bool):
+        return value
+    value_str = str(value).strip().lower()
+    if value_str in {"true", "1", "yes", "y", "t"}:
+        return True
+    if value_str in {"false", "0", "no", "n", "f"}:
+        return False
+    return None
+
+TYPE_ALIASES = {
+    "int1": "int",
+}
+ELVX_DATATYPE = {
+    "BuildingData": {
+        "NoOfFloors": int,
+        "UseFloorLevel": int,
+        "LowestFloorFirst": to_bool,
+        "NoShafts": int,
+        "NoConnections": int,
+        "AbsenteeismPercent": float,
+        "BuildingType": int,
+        "Express": int,
+        "ExpressStartPosition": float,
+        "ExpressEndPosition": float,
+    },
+    "FloorData": {
+        "FloorLevel": float,
+        "NoOfPeople": int,
+        "Area": float,
+        "AreaPerPerson": float,
+        "EntranceFloor": to_bool,
+        "UserInterface": int,
+        "FloorName": str,
+        "FloorIndex": int,
+        "Doors": str,
+    },
+    "CarData":{
+        "CarType": str,
+        "Capacity": float,
+        "FloorAreaM2": float,
+        "DoorPreOpening": float,
+        "DoorOpenTime": float,
+        "DoorCloseTime": float,
+        "HomeDoorDwell1": float,
+        "HomeDoorDwell2": float,
+        "DoorDwell1": float,
+        "DoorDwell2": float,
+        "MaxDoorReOpenings": int,
+        "Speed": float,
+        "Acceleration": float,
+        "Jerk": float,
+        "MotorStartDelay": float,
+        "LevelingDelay": float,
+        "HomeFloor": int,
+        "MGShutDownAfterTime": float,
+        "MGRestartTime": float,
+        "HomeShaft": int,
+        "VelocityXAxis": float,
+        "AccelerationXAxis": float,
+        "JerkXAxis": float,
+        "LoadConnectionDelayXAxis": float,
+        "UnLoadConnectionDelayXAxis": float,
+        "StandardMetricCapacity": float,
+        "StandardImperialCapacity": float,
+        "StandardMetricSpeed": float,
+        "StandardImperialSpeed": float,
+        "m_StandardNoLifts": int,
+        "color": str,
+    },
+    "Results":{
+        "Id": int,
+        "AWT": float,
+        "LWT": float,
+        "ATT": float,
+        "LTT": float,
+        "AJT": float,
+        "LJT": float,
+        "IsAnalysed": int,
+        "MeetResultsOptionsCriteria": int,
+    },
+    "MasterConfigs": {
+        "NoOfElevatorsMode": str,
+        "NoOfLifts": int,
+        "MinNoOfLifts": int,
+        "MaxNoOfLifts": int,
+        "CarType": str,
+        "CapacityMode": int,
+        "Capacity": float,
+        "MinCapacity": float,
+        "MaxCapacity": float,
+        "CarAreaMode": str,
+        "CarAreaM2": float,
+        "DoorMode": str,
+        "Pre-Open": float,
+        "Open": float,
+        "Close": float,
+        "DoorDwell1": float,
+        "DoorDwell2": float,
+        "SpeedMode": str,
+        "Speed": float,
+        "MinSpeed": float,
+        "MaxSpeed": float,
+        "AccelerationMode": str,
+        "Acceleration": float,
+        "JerkMode": str,
+        "Jerk": float,
+        "StartDelay": float,
+        "LevelingDelay": float,
+        "HomeFloor": int,
+        "ResultFilter": str,
+        "MaxAWTFilter": int,
+        "MaxAJTFilter": int,
+        "MaxInterval": int,
+        "MaxCapacityFactor": int,
+        "Min5MinHandlingCapacity": int,
+        "DriveModel": str,
+    },
+    "Passenger": {
+        "StartTimeHours": int,
+        "StartTimeMins": int,
+        "EndTimeHours": int,
+        "EndTimeMins": int,
+        "LoadingTime": float,
+        "UnloadingTime": float,
+        "PassengerMass": float,
+        "CapacityFactorByMass": float,
+        "PassengerAreaM2": float,
+        "CapacityFactorByAreaPerCent": float,
+        "StairFactor": float,
+    }
+}
+elvx_config_based_fields = list(ELVX_DATATYPE.get("Results", {}).keys()) + ["NoOfLifts", "ATD", "QueueLength"] #, "AI"
+elvx_zone_based_fields = ["CustomName", "Population", "Date", "FileName"]
+kpi_fields = ["NoOfLifts", "AWT", "ATD", "ATT", "LWT", "ATT", "LTT", "AJT", "LJT"]

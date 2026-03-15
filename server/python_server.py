@@ -6,6 +6,9 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, StreamingResponse
+from scripts.xml_reader.xml_utilites import fetch_all_level_table
+from scripts.dataframe_reader.dataframe_reader import fetch_timeline
+from scripts.meta_reader.meta_reader import read_option_meta
 
 
 SERVER_DIR = Path(__file__).resolve().parent
@@ -28,22 +31,14 @@ app.add_middleware(
 )
 
 # Report Filing Structure within an Option's Directory ---- 
-@app.get("/api/dir-tree")
-def get_option_dir_structure(path: str = Query(..., description="Path relative to public/data_dev")):
+@app.get("/api/option-meta")
+def get_option_meta_info(path: str = Query(..., description="Path relative to public/data_dev")):
   try:
     OPTION_DIR = _safe_resolve(path)
     if not OPTION_DIR.exists() or not OPTION_DIR.is_dir():
         raise HTTPException(status_code=404, detail="Data directory not found")
-    dirTree = {
-      "url": str(path),
-      "zones": {},
-    }
-    # Scan zones
-    zones = [f for f in OPTION_DIR.iterdir() if f.is_dir()]
-    for zone in zones:
-        dirTree["zones"][zone.name] = [f.name for f in zone.iterdir() if f.is_dir()]
-
-    return dirTree
+    meta = read_option_meta(OPTION_DIR) | {"url": str(path)}
+    return meta
   
   except HTTPException:
         raise
@@ -58,34 +53,7 @@ def fetch_timeline_lvl1(path: str = Query(..., description="Path relative to pub
     if not sim_path.exists() or not sim_path.is_dir():
         raise HTTPException(status_code=404, detail="Directory not found")
     
-    time_start = time.perf_counter()
-    data_pack = {
-        "Zone": sim_path.parent.name,
-        "SimID": sim_path.name,
-        "TimelineLogbooks": {},
-    }
-    # Read Dataframe ----
-    file = sim_path / "compiled" / "timeline_logbook.feather"
-    columns = ['time', 'queue_length', 'mean_wait_time', 'min_awt', 'max_awt']
-    df = pd.read_feather(file, columns = columns)
-    elapsed = time.perf_counter() - time_start
-    print(f"Read sim data in {elapsed:.2f} seconds")
-
-    # Minor processing ----
-    df['awt'] = df['mean_wait_time']
-    df["awt_range"] = df["max_awt"] - df["min_awt"]
-    df = df.drop(columns=["max_awt", 'mean_wait_time'])
-    df = df.round(1)
-
-    elapsed = time.perf_counter() - time_start
-    print(f"Processed sim data @ {elapsed:.2f} seconds")
-    # Serialize DataFrame to List ----
-    data = [df.columns.tolist()] + df.values.tolist()
-    data_pack["TimelineLogbooks"].setdefault("all", {})["compiled"] = data
-    
-    elapsed = time.perf_counter() - time_start
-    print(f"Loaded sim data @ {elapsed:.2f} seconds")
-    return data_pack
+    return fetch_timeline(sim_path)
 
 
 @app.get("/api/read-sim2")

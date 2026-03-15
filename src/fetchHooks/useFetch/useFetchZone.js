@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { fetchDirTree, fetchSimDataPack} from '../fileStatus';
+import { fetchDirTree, fetchSimDataPack} from '../../utils/fileStatus';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { updateDirectoryTree, addSim } from '../simSlice';
 

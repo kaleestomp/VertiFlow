@@ -1,8 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import simReducer from './simSlice';
- const store = configureStore({
+import zoneReducer from './zoneSlice';
+
+const store = configureStore({
     reducer: {
         simState: simReducer,
+        zoneMeta: zoneReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

@@ -9,16 +9,11 @@
   overflow: hidden;
 }
 
-.right {
-  display: flex;
-  align-items: center;
-}
-
-.left {
+.timeline-header-left {
   flex: 0 0 auto;
 }
 
-.center {
+.timeline-header-center {
   flex: 1 1 auto;
   text-align: center;
   display: flex;
@@ -26,11 +21,12 @@
   align-items: center;
 }
 
-.right {
+.timeline-header-right {
   flex: 0 0 auto;
   text-align: right;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
 }
 
 /* ------------------------------------------------------ */

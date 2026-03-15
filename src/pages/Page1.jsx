@@ -3,14 +3,19 @@ import TimelineCard from '../components/TimelineCard/TimelineCard';
 // import LobbyCard from '../components/LobbyChart/LobbyCard';
 import LobbyCard from '../components/MultiLobbyChart/LobbyCard';
 import { fetchDirTree, fetchSimDataPack} from '../utils/fileStatus';
-import { useFetchZone } from '../utils/useFetch/useFetchZone';
+import { useFetchZone } from '../fetchHooks/useFetch/useFetchZone';
+import { useFetchOptionMeta } from '../fetchHooks/fetchOptionMeta/useFetchOptionMeta';
 import { loadChunks } from '../utils/streamLoad';
+import SideCard from '../components/SideCard/SideCard';
 
 import './Page1.css';
 
 function Page1() {
 
+  const res = useFetchOptionMeta({ optionPath: 'Project1/Direct-3Zone-DD-Lunch' });
   const simData = useFetchZone({ optionPath: 'Project1/Direct-3Zone-DD-Lunch' });
+  
+  const [isSideCardCollapsed, setIsSideCardCollapsed] = useState(false);
   const [maxQueue, setMaxQueue] = useState({5: 60, 6: 80, 7: 90});
   const [timeSlice, setTimeSlice] = useState({x: '00:00:00', y: {5: maxQueue[5], 6: maxQueue[6], 7: maxQueue[7]}});
   const onTimelineHover = (value) => {
@@ -19,11 +24,14 @@ function Page1() {
   };
 
   return (
-    <div className="page1-container">
-      <LobbyCard queue={timeSlice.y} maxQueue={maxQueue} />
-      {/* <ThreeViewport /> */}
-      <div className="floating-wrapper">
-        <TimelineCard simData={simData} onHover={onTimelineHover} />
+    <div className={`page1-container ${isSideCardCollapsed ? 'sidecard-collapsed' : 'sidecard-expanded'}`}>
+      <SideCard isCollapsed={isSideCardCollapsed} onToggle={() => setIsSideCardCollapsed((prev) => !prev)} />
+      <div className="page1-content">
+        <LobbyCard queue={timeSlice.y} maxQueue={maxQueue} />
+        {/* <ThreeViewport /> */}
+        <div className="floating-wrapper">
+          <TimelineCard simData={simData} onHover={onTimelineHover} />
+        </div>
       </div>
       {/* <div className="container-wrapper">
         <TimelineCard simData={simData} />

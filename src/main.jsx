@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import { Provider } from 'react-redux'
-import store from './utils/store.js';
+import store from './store/store.js';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme.js';
 

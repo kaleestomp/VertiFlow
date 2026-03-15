@@ -3,7 +3,7 @@ const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 export async function fetchDirTree(relativePath) {
   const params = new URLSearchParams({ path: relativePath });
-  const res = await fetch(`${API_BASE}/api/dir-tree?${params}`);
+  const res = await fetch(`${API_BASE}/api/option-meta?${params}`);
 
   if (!res.ok) {
     throw new Error(`Failed to fetch option directory structure: ${res.status} ${res.statusText}`);

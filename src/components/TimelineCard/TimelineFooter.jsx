@@ -10,7 +10,7 @@ export default function TimelineFooter({ simData }) {
 
     return (
         <div className="timeline-footer-container">
-            <div className="center">
+            <div className="timeline-footer-center">
                 <Pagination
                     count={10}
                     siblingCount={4}
